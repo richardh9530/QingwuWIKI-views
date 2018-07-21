@@ -24,6 +24,9 @@
 <body>
 <div class="manual-reader manual-container">
     {{template "widgets/header.tpl" .}}
+    <div>
+        <div>Test</div>
+    </div>
     <div class="container manual-body">
         <div class="row">
             {{if gt (.Labels|len) 1000000}}
