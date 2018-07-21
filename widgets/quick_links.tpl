@@ -83,12 +83,12 @@
                 <hr>
                 <div class="form-group"><!--group 6 ## add by Qingwu-->
                     <div class="col-sm-6">
-                        <a href="file:///D:/Documents/Public/HanQingwu/X/navigation.html" class="btn btn-primary active" role="button" style="width:100%">
+                        <a href="/qingwu/view_knowledge_graph" class="btn btn-primary active" role="button" style="width:100%">
                             查看-清无知识图谱
                         </a>
                     </div>
                     <div class="col-sm-6">
-                        <a href="/book/books/setting" class="btn btn-primary active" role="button" style="width:100%">
+                        <a href="/qingwu/update_knowledge_graph" class="btn btn-primary active" role="button" style="width:100%">
                             更新-清无知识图谱
                         </a>
                     </div>
