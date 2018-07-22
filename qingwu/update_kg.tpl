@@ -29,7 +29,7 @@
     </div>
     <div class="container manual-body">
         <div class="row">
-            <div>build过程：build</div>
+            <div>更新功能：开发中...</div>
         </div>
         <div class="row" style="display: none;">
             {{if gt (.Labels|len) 1000000}}

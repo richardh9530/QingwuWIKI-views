@@ -29,7 +29,8 @@
     </div>
     <div class="container manual-body">
         <div class="row">
-            <div>build过程：build</div>
+            <div>build过程：go build -ldflags "-w" </div>
+            <div>其他功能：开发中...</div>
         </div>
         <div class="row" style="display: none;">
             {{if gt (.Labels|len) 1000000}}
