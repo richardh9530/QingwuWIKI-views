@@ -20,67 +20,94 @@
     <script src="/static/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="/static/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/static/qingwu/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/static/qingwu/bower_components/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="/static/qingwu/bower_components/hotbox/hotbox.css" />
+    <link rel="stylesheet" href="/static/qingwu/bower_components/kityminder-core/dist/kityminder.core.css" />
+    <link rel="stylesheet" href="/static/qingwu/bower_components/color-picker/dist/color-picker.min.css" />
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="/static/qingwu/kityminder.editor.min.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        h1.editor-title {
+            background: #393F4F;
+            color: white;
+            margin: 0;
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+            font-family: 'Hiragino Sans GB', 'Arial', 'Microsoft Yahei';
+            font-weight: normal;
+            padding: 0 20px;
+        }
+        div.minder-editor-container {
+            position: absolute;
+            top: 53px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
 </head>
-<body>
-<div class="manual-reader manual-container">
+<body ng-app="kityminderElem" ng-controller="MainController">
     {{template "widgets/header.tpl" .}}
-    <div>
-        <div>Test</div>
-    </div>
-    <div class="container manual-body">
-        <div class="row">
-            <div>build过程：go build -ldflags "-w" </div>
-            <div>其他功能：开发中...</div>
-        </div>
-        <div class="row" style="display: none;">
-            {{if gt (.Labels|len) 1000000}}
-            <div class="hide tag-container-outer">
-                <span class="title">热门标签：</span>
-                <span class="tags">
-                    {{range  $index,$item := .Labels}}
-                    <a href="{{urlfor "LabelController.Index" ":key" $item.LabelName}}">{{$item.LabelName}}<span class="detail">{{$item.BookNumber}}</span></a>
-                    {{end}}
+    <kityminder-editor on-init="initEditor(editor, minder)" data-theme="fresh-green"></kityminder-editor>
+    <iframe name="frameFile" style="display:none;"></iframe>
 
-                </span>
-            </div>
-
-            {{end}}
-
-            <div class="manual-list">
-                {{range $index,$item := .Lists}}
-                <div class="list-item">
-                    <dl class="manual-item-standard">
-                        <dt>
-                            <a href="{{urlfor "DocumentController.Index" ":key" $item.Identify}}" title="{{$item.BookName}}-{{$item.CreateName}}" target="_blank">
-                                <img src="{{cdnimg $item.Cover}}" class="cover" alt="{{$item.BookName}}-{{$item.CreateName}}" onerror="this.src='{{cdnimg "static/images/book.jpg"}}';">
-                            </a>
-                        </dt>
-                        <dd>
-                            <a href="{{urlfor "DocumentController.Index" ":key" $item.Identify}}" class="name" title="{{$item.BookName}}-{{$item.CreateName}}" target="_blank">{{$item.BookName}}</a>
-                        </dd>
-                        <dd>
-                            <span class="author">
-                                <b class="text">作者</b>
-                                <b class="text">-</b>
-                                <b class="text">{{if eq $item.RealName "" }}{{$item.CreateName}}{{else}}{{$item.RealName}}{{end}}</b>
-                            </span>
-                        </dd>
-                    </dl>
-                </div>
-                {{end}}
-                <div class="clearfix"></div>
-            </div>
-            <nav class="pagination-container">
-                {{if gt .TotalPages 1}}
-                {{.PageHtml}}
-                {{end}}
-                <div class="clearfix"></div>
-            </nav>
-        </div>
-    </div>
-    {{template "widgets/footer.tpl" .}}
-</div>
-<script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}" type="text/javascript"></script>
-<script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script> {{template "widgets/quick_links.tpl" .}}
 </body>
+<script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}" type="text/javascript"></script>
+{{template "widgets/quick_links.tpl" .}}
+<!-- bower:js -->
+<script src="/static/qingwu/bower_components/jquery/dist/jquery.js"></script>
+<script src="/static/qingwu/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/static/qingwu/bower_components/angular/angular.js"></script>
+<script src="/static/qingwu/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="/static/qingwu/bower_components/codemirror/lib/codemirror.js"></script>
+<script src="/static/qingwu/bower_components/codemirror/mode/xml/xml.js"></script>
+<script src="/static/qingwu/bower_components/codemirror/mode/javascript/javascript.js"></script>
+<script src="/static/qingwu/bower_components/codemirror/mode/css/css.js"></script>
+<script src="/static/qingwu/bower_components/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="/static/qingwu/bower_components/codemirror/mode/markdown/markdown.js"></script>
+<script src="/static/qingwu/bower_components/codemirror/addon/mode/overlay.js"></script>
+<script src="/static/qingwu/bower_components/codemirror/mode/gfm/gfm.js"></script>
+<script src="/static/qingwu/bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
+<script src="/static/qingwu/bower_components/marked/lib/marked.js"></script>
+<script src="/static/qingwu/bower_components/kity/dist/kity.min.js"></script>
+<script src="/static/qingwu/bower_components/hotbox/hotbox.js"></script>
+<script src="/static/qingwu/bower_components/json-diff/json-diff.js"></script>
+<script src="/static/qingwu/bower_components/kityminder-core/dist/kityminder.core.min.js"></script>
+<script src="/static/qingwu/bower_components/color-picker/dist/color-picker.min.js"></script>
+<!-- endbower -->
+
+<script src="/static/qingwu/kityminder.editor.min.js"></script>
+<script src="/static/qingwu/qingwu_minder.js"></script>
+
+<script>
+    var content = "";
+    angular.module('kityminderElem', ['kityminderEditor'])
+        .controller('MainController', function($scope) {
+            $scope.initEditor = function(editor, minder) {
+                window.editor = editor;
+                window.minder = minder;
+                editor.minder.importData('json', content).then(function(data){
+                    console.log(data);
+                });
+            };
+        });
+    function readJSON(result){
+        //回调函数名称(indexDemo)，需要与 src 中一致，而且要与文件地址中名一致。jsonp格式 名称({})
+        //不然无法获取到对应的文件
+        content = JSON.stringify(result);
+    }
+
+</script>
+<script type="text/javascript" src="/uploads/qingwu/{{.JSON_NAME}}.json?callback=readJSON"></script>
 </html>
