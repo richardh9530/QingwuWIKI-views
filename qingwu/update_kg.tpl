@@ -28,53 +28,11 @@
         <div>Test</div>
     </div>
     <div class="container manual-body">
+        <script language="JavaScript">
+            alert("更新完毕！")
+        </script>
         <div class="row">
-            <div>更新功能：开发中...</div>
-        </div>
-        <div class="row" style="display: none;">
-            {{if gt (.Labels|len) 1000000}}
-            <div class="hide tag-container-outer">
-                <span class="title">热门标签：</span>
-                <span class="tags">
-                    {{range  $index,$item := .Labels}}
-                    <a href="{{urlfor "LabelController.Index" ":key" $item.LabelName}}">{{$item.LabelName}}<span class="detail">{{$item.BookNumber}}</span></a>
-                    {{end}}
-
-                </span>
-            </div>
-
-            {{end}}
-
-            <div class="manual-list">
-                {{range $index,$item := .Lists}}
-                <div class="list-item">
-                    <dl class="manual-item-standard">
-                        <dt>
-                            <a href="{{urlfor "DocumentController.Index" ":key" $item.Identify}}" title="{{$item.BookName}}-{{$item.CreateName}}" target="_blank">
-                                <img src="{{cdnimg $item.Cover}}" class="cover" alt="{{$item.BookName}}-{{$item.CreateName}}" onerror="this.src='{{cdnimg "static/images/book.jpg"}}';">
-                            </a>
-                        </dt>
-                        <dd>
-                            <a href="{{urlfor "DocumentController.Index" ":key" $item.Identify}}" class="name" title="{{$item.BookName}}-{{$item.CreateName}}" target="_blank">{{$item.BookName}}</a>
-                        </dd>
-                        <dd>
-                            <span class="author">
-                                <b class="text">作者</b>
-                                <b class="text">-</b>
-                                <b class="text">{{if eq $item.RealName "" }}{{$item.CreateName}}{{else}}{{$item.RealName}}{{end}}</b>
-                            </span>
-                        </dd>
-                    </dl>
-                </div>
-                {{end}}
-                <div class="clearfix"></div>
-            </div>
-            <nav class="pagination-container">
-                {{if gt .TotalPages 1}}
-                {{.PageHtml}}
-                {{end}}
-                <div class="clearfix"></div>
-            </nav>
+            <div>更新JSON：更新完毕...</div>
         </div>
     </div>
     {{template "widgets/footer.tpl" .}}

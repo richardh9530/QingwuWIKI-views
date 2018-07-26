@@ -90,7 +90,7 @@
                     </div>
                     <div class="col-sm-6">
                         <!--/qingwu/update_knowledge_graph-->
-                        <a href="/qingwu" class="btn btn-primary active" role="button" style="width:100%">
+                        <a href="/qingwu/update_knowledge_graph" class="btn btn-primary active" role="button" style="width:100%">
                             更新-清无知识图谱
                         </a>
                     </div>
