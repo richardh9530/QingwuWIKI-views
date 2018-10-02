@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>{{.SITE_NAME}} - Test Powered by QingwuWIKI</title>     <!--Qingwu Add-->     <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
+    <title>{{.SITE_NAME}} - Powered by QingwuWIKI</title>     <!--Qingwu Add-->     <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
