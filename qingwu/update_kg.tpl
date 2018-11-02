@@ -32,7 +32,7 @@
             alert("更新完毕！")
         </script>
         <div class="row">
-            <div>更新JSON：更新完毕...</div>
+            <div>更新JSON：更新完毕！</div>
         </div>
     </div>
     {{template "widgets/footer.tpl" .}}
