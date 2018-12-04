@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>编辑文档 - Powered by QingwuWIKI</title>     <!--Qingwu Add-->     <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
+    <title>编辑文档 - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
 
     <!-- Bootstrap -->
     <link href="{{cdncss "/static/bootstrap/css/bootstrap.min.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/font-awesome/css/font-awesome.min.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/jstree/3.3.4/themes/default/style.min.css"}}" rel="stylesheet">
-    <link href="{{cdncss "/static/css/kancloud.css"}}" rel="stylesheet">
-    <link href="/static/jquery/plugins/imgbox/imgbox.css" rel="stylesheet">
+    <link href="{{cdncss "/static/css/kancloud.css" "version"}}" rel="stylesheet">
+    <link href="{{cdncss "/static/jquery/plugins/imgbox/imgbox.css" "version"}}" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -170,7 +170,8 @@
     </div>
 </div>
 <script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}"></script>
-<script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}"></script>
+<script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
+{{template "widgets/quick_links.tpl" .}}
 <script src="{{cdnjs "/static/jstree/3.3.4/jstree.min.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/jquery/plugins/imgbox/jquery.imgbox.pack.js"}}"></script>
 <script type="text/javascript">

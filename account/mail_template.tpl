@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>找回密码 - Powered by QingwuWIKI</title>     <!--Qingwu Add-->     <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
+    <title>找回密码 - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
     <style type="text/css">
         .ua-macos::-webkit-scrollbar{ display: none; }
         html,body{background-color: transparent;margin:0;padding: 0;}

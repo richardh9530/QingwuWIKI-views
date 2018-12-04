@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{.LabelName}} - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
-    <meta name="keywords" content="QingwuWIKI知识管理系统,WIKI,wiki,wiki在线,文档在线管理,接口文档在线管理,接口文档管理,{{.LabelName}}">
+    <title>项目空间{{.Model.ItemName}}的项目列表 - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
+    <meta name="keywords" content="QingwuWIKI知识管理系统,WIKI,wiki,wiki在线,文档在线管理,接口文档在线管理,接口文档管理,{{.Model.ItemName}}">
     <meta name="description" content="QingwuWIKI知识管理系统 {{.site_description}}">
     <!-- Bootstrap -->
     <link href="{{cdncss "/static/bootstrap/css/bootstrap.min.css"}}" rel="stylesheet">
@@ -16,14 +16,14 @@
 </head>
 <body>
 <div class="manual-reader manual-container manual-search-reader">
-    {{template "widgets/header.tpl" .}}
+{{template "widgets/header.tpl" .}}
     <div class="container manual-body">
         <div class="search-head">
-            <strong class="search-title">显示标签为"{{.LabelName}}"的项目</strong>
+            <strong class="search-title">显示项目空间为"{{.Model.ItemName}}"的项目</strong>
         </div>
         <div class="row">
             <div class="manual-list">
-                {{range $index,$item := .Lists}}
+            {{range $index,$item := .Lists}}
                 <div class="list-item">
                     <dl class="manual-item-standard">
                         <dt>
@@ -43,18 +43,21 @@
                         </dd>
                     </dl>
                 </div>
-                {{else}}
-                    <div class="text-center" style="height: 200px;margin: 100px;font-size: 28px;">暂无项目</div>
-                {{end}}
+            {{else}}
+                <div class="search-empty">
+                    <img src="{{cdnimg "/static/images/search_empty.png"}}" class="empty-image">
+                    <span class="empty-text">暂无项目</span>
+                </div>
+            {{end}}
 
                 <div class="clearfix"></div>
             </div>
             <nav class="pagination-container">
-                {{.PageHtml}}
+            {{.PageHtml}}
             </nav>
         </div>
     </div>
-    {{template "widgets/footer.tpl" .}}
+{{template "widgets/footer.tpl" .}}
 </div>
 <script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}"></script>
 <script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>

@@ -7,7 +7,7 @@
             <span>&nbsp;·&nbsp;</span>
             <span><a href="http://naotu.baidu.com/home" target="_blank">QWMinder</a></span>
         </div>
-        {{if ne .site_beian ""}}
+        {{if .site_beian}}
         <div class="row text-center">
             <a href="http://www.miitbeian.gov.cn" target="_blank">{{.site_beian}}</a>
         </div>

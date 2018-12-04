@@ -17,7 +17,6 @@
                         <a href="{{urlfor "LabelController.List" }}" title="标签">标签</a>
                     </li>
                 </ul>
-
                 <div class="searchbar pull-left visible-lg-inline-block visible-md-inline-block">
                     <form class="form-inline" action="{{urlfor "SearchController.Index"}}" method="get">
                         <input class="form-control" name="keyword" type="search" style="width: 230px;" placeholder="请输入关键词..." value="{{.Keyword}}">
@@ -44,6 +43,9 @@
                             </li>
                             <li>
                                 <a href="{{urlfor "BookController.Index"}}" title="我的项目"><i class="fa fa-book" aria-hidden="true"></i> 我的项目</a>
+                            </li>
+                            <li>
+                                <a href="{{urlfor "BlogController.ManageList"}}" title="我的文章"><i class="fa fa-file" aria-hidden="true"></i> 我的文章</a>
                             </li>
                             {{if eq .Member.Role 0 }}
                             <li>
@@ -79,6 +81,9 @@
                         </li>
                         <li>
                             <a href="{{urlfor "BookController.Index"}}" title="我的项目"><i class="fa fa-book" aria-hidden="true"></i> 我的项目</a>
+                        </li>
+                        <li>
+                            <a href="{{urlfor "BlogController.ManageList"}}" title="我的文章"><i class="fa fa-file" aria-hidden="true"></i> 我的文章</a>
                         </li>
                         {{if eq .Member.Role 0  1}}
                         <li>
