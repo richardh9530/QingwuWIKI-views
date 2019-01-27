@@ -31,19 +31,21 @@
                  {{else}}
                         <a href="{{urlfor "BlogController.Index" ":id" $item.DocumentId}}" title="{{$item.DocumentName}}" target="_blank">{{str2html $item.DocumentName}}</a>
                 {{end}}
+                        &emsp;
+                        <div class="source" style="display:inline">
+                            <span class="item">创建时间：{{date_format  $item.CreateTime "2006-01-02 15:04:05"}}</span>
+                            <span class="item">更新时间：{{date_format  $item.ModifyTime "2006-01-02 15:04:05"}}</span>
+                            {{if eq $item.SearchType "document"}}
+                            <span class="item">来自项目：<a href="{{urlfor "DocumentController.Index" ":key" $item.BookIdentify}}" target="_blank">{{$item.BookName}}</a></span>
+                            {{else}}
+                            <span class="item">来自文章：<a href="{{urlfor "BlogController.Index" ":id" $item.DocumentId}}" target="_blank">{{$item.BookName}}</a></span>
+                            {{end}}
+                        </div>
                     </div>
                     <div class="description">
                         {{str2html $item.Description}}
                     </div>
-                    <div class="source">
-                        <span class="item">创建时间：{{date_format  $item.CreateTime "2006-01-02 15:04:05"}}</span>
-                        <span class="item">更新时间：{{date_format  $item.ModifyTime "2006-01-02 15:04:05"}}</span>
-                        {{if eq $item.SearchType "document"}}
-                        <span class="item">来自项目：<a href="{{urlfor "DocumentController.Index" ":key" $item.BookIdentify}}" target="_blank">{{$item.BookName}}</a></span>
-                        {{else}}
-                        <span class="item">来自文章：<a href="{{urlfor "BlogController.Index" ":id" $item.DocumentId}}" target="_blank">{{$item.BookName}}</a></span>
-                        {{end}}
-                    </div>
+
                 </div>
                 {{else}}
                 <div class="search-empty">
