@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>搜索 - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
+    <title>Recent Docs - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
     <meta name="keywords" content="QingwuWIKI知识管理系统,WIKI,wiki,wiki在线,文档在线管理,接口文档在线管理,接口文档管理,{{.Keyword}}">
     <meta name="description" content="QingwuWIKI知识管理系统 {{.site_description}}">
     <!-- Bootstrap -->
@@ -18,9 +18,6 @@
 <div class="manual-reader manual-container manual-search-reader">
     {{template "widgets/header.tpl" .}}
     <div class="container manual-body">
-        <div class="search-head">
-            <strong class="search-title">RECENT DOCS</strong>
-        </div>
         <div class="row">
             <div class="manual-list">
                 {{range $index,$item := .Lists}}
