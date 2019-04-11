@@ -31,8 +31,17 @@
                                 </a>
                             </dt>
                             <dd>
-                                <a href="{{urlfor "DocumentController.Index" ":key" $item.Identify}}" class="name" title="{{$item.BookName}}-{{$item.CreateName}}" target="_blank">{{$item.BookName}}</a>
+                                <a href="/qingwu/view_knowledge_graph/{{$item.BookId}}" class="name"
+                                    title="{{$item.BookName}}-{{$item.CreateName}}"
+                                    >{{$item.BookName}}
+                                </a>
                             </dd>
+                            {{/*<dd>*/}}
+                                {{/*<a href="{{urlfor "DocumentController.Index" ":key" $item.Identify}}" class="name"*/}}
+                                 {{/*title="{{$item.BookName}}-{{$item.CreateName}}"*/}}
+                                 {{/*target="_blank">{{$item.BookName}}*/}}
+                                {{/*</a>*/}}
+                            {{/*</dd>*/}}
                             <dd>
                             <span class="author">
                                 <b class="text">作者</b>
