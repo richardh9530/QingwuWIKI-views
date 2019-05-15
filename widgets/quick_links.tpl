@@ -103,13 +103,18 @@
         </div>
         </form>
     </div>
-</div>v
-<script src="{{cdnjs "/static/jquery/2.0.3/jquery.min.js"}}" type="text/javascript"></script>
-<script type="text/javascript">if (typeof module === 'object') {window.jQuery = window.jquery = window.$ = module.exports;};</script>
+</div>
+{{/*<script src="{{cdnjs "/static/jquery/2.0.3/jquery.min.js"}}" type="text/javascript"></script>*/}}
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+<script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
+{{/*<script type="text/javascript">if (typeof module === 'object') {window.jQuery = window.jquery = window.$ = module.exports;};</script>*/}}
 <script type="text/javascript">
-    $("#btn_quick_links").bind("click",function(){
-        $('#quickLinksModal').modal({backdrop: "static"});
-        //$('#quickLinksModal').modal("show");
-    });
+$("#btn_quick_links").bind("click",function(){
+$('#quickLinksModal').modal({backdrop: "static"});
+//$('#quickLinksModal').modal("show");
+});
 </script>
+<script>if (window.module) module = window.module;</script>
+
+

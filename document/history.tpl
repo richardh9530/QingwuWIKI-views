@@ -19,8 +19,6 @@
     <script src="/static/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="/static/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{cdnjs "/static/qingwu/js/load_jquery.js"}}"></script>
     <style type="text/css">
         .container{margin: 5px auto;}
     </style>
@@ -72,7 +70,7 @@
     </nav>
 </div>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 {{template "widgets/quick_links.tpl" .}}
 <script src="{{cdnjs "/static/layer/layer.js"}}" type="text/javascript" ></script>
 <script type="text/javascript">

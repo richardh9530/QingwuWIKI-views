@@ -424,9 +424,7 @@
 {{template "document/template_code.tpl"}}
 </template>
 <script src="{{cdnjs "/static/js/array.js" "version"}}" type="text/javascript"></script>
-<script src="{{cdnjs "/static/qingwu/js/load_jquery.js"}}"></script>
 <script src="{{cdnjs "/static/vuejs/vue.min.js"}}" type="text/javascript"></script>
-<script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
 {{template "widgets/quick_links.tpl" .}}
 <script src="{{cdnjs "/static/webuploader/webuploader.min.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/jstree/3.3.4/jstree.min.js"}}" type="text/javascript"></script>
