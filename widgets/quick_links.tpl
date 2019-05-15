@@ -103,9 +103,9 @@
         </div>
         </form>
     </div>
-</div>
+</div>v
 <script src="{{cdnjs "/static/jquery/2.0.3/jquery.min.js"}}" type="text/javascript"></script>
-<script>if (typeof module === 'object') {window.jQuery = window.jquery = window.$ = module.exports;};</script>
+<script type="text/javascript">if (typeof module === 'object') {window.jQuery = window.jquery = window.$ = module.exports;};</script>
 <script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
 <script type="text/javascript">
     $("#btn_quick_links").bind("click",function(){
