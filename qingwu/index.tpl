@@ -63,7 +63,6 @@
     <iframe name="frameFile" style="display:none;"></iframe>
 
 </body>
-<script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}" type="text/javascript"></script>
 {{template "widgets/quick_links.tpl" .}}
 <!-- bower:js -->
 <script src="/static/qingwu/bower_components/jquery/dist/jquery.js"></script>

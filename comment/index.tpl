@@ -78,6 +78,6 @@
         </div>
     </div>
 </div>
-<script src="{{cdnjs "/static/qingwu/js/load_bootstrap.js"}}"></script>
+<script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
 </body>
 </html>

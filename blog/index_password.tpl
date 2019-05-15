@@ -7,7 +7,7 @@
     <meta name="renderer" content="webkit" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>请输入文章密码 - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
-    <script src="{{cdnjs "static/js/jquery.form.js"}}"></script>
+
     <style type="text/css">
     body{ background: #f2f2f2;}
     .d_button{ cursor: pointer;}
@@ -111,6 +111,11 @@
 </form>
 </div>
 </div>
+<div style="display:none">
+{{template "widgets/quick_links.tpl" .}}
+</div>
+<script src="{{cdnjs "static/js/jquery.form.js"}}"></script>
+
 <script type="text/javascript">
 $("#auth_form").ajaxForm({
     beforeSerialize: function () {
@@ -131,6 +136,6 @@ $("#auth_form").ajaxForm({
     }
 });
 </script>
-{{template "widgets/quick_links.tpl" .}}
+
 </body>
 </html>

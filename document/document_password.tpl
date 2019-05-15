@@ -7,8 +7,6 @@
     <meta name="renderer" content="webkit" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>请输入项目密码 - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">
-    <script src="{{cdnjs "static/jquery/1.12.4/jquery.min.js"}}"></script>
-    <script src="{{cdnjs "static/js/jquery.form.js"}}"></script>
     <style type="text/css">
     body{ background: #f2f2f2;}
     .d_button{ cursor: pointer;}
@@ -93,7 +91,10 @@
     }
     </style>
 </head>
+    {{template "widgets/quick_links.tpl" .}}
+    <script src="{{cdnjs "/static/js/jquery.form.js"}}" type="text/javascript"></script>
 <body>
+
 <div class="auth_form">
 <div class="shell">
         <form action="{{urlfor "DocumentController.Index" ":key" .Identify}}" method="post" id="auth_form">

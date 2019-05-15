@@ -104,7 +104,6 @@
         </form>
     </div>
 </div>
-{{/*<script src="{{cdnjs "/static/jquery/2.0.3/jquery.min.js"}}" type="text/javascript"></script>*/}}
 <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 <script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
