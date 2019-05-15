@@ -119,8 +119,6 @@
     </div>
 </div>
 <!--END Modal-->
-<script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}" type="text/javascript"></script>
-<script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
 {{template "widgets/quick_links.tpl" .}}
 <script src="{{cdnjs "/static/webuploader/webuploader.min.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/cropper/2.3.4/cropper.min.js"}}" type="text/javascript"></script>

@@ -127,8 +127,6 @@
 {{template "widgets/footer.tpl" .}}
     </div>
 </div>
-<script src="{{cdnjs "/static/jquery/1.12.4/jquery.min.js"}}"></script>
-<script src="{{cdnjs "/static/bootstrap/js/bootstrap.min.js"}}" type="text/javascript"></script>
 {{template "widgets/quick_links.tpl" .}}
 {{.Scripts}}
 </body>
