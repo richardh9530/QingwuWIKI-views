@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta name="author" content="Minho" />
-    <meta name="site" content="https://www.iminho.me" />
+    <meta name="site" content="https://www.qingwu.me" />
     <meta name="keywords" content="{{.Model.BlogTitle}}">
     <meta name="description" content="{{.Model.BlogTitle}}-{{.Description}}">
     <title>{{.Model.BlogTitle}} - Powered by QingwuWIKI</title>    <!--Qingwu Add-->    <link href="/static/images/favicon.ico" mce_href="favicon.ico" rel="icon" type="image/x-icon">

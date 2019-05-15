@@ -24,9 +24,9 @@
                 <div class="search-item">
                     <div class="title">
                 {{if eq $item.SearchType "document"}}
-                        <a href="{{urlfor "DocumentController.Read" ":key" $item.BookIdentify ":id" $item.Identify}}" title="{{$item.DocumentName}}" target="_blank">{{str2html $item.DocumentName}}</a>
+                        <a href="{{urlfor "DocumentController.Read" ":key" $item.BookIdentify ":id" $item.Identify}}" title="{{$item.DocumentName}}">{{str2html $item.DocumentName}}</a>
                  {{else}}
-                        <a href="{{urlfor "BlogController.Index" ":id" $item.DocumentId}}" title="{{$item.DocumentName}}" target="_blank">{{str2html $item.DocumentName}}</a>
+                        <a href="{{urlfor "BlogController.Index" ":id" $item.DocumentId}}" title="{{$item.DocumentName}}">{{str2html $item.DocumentName}}</a>
                 {{end}}
                         &emsp;
                         <div class="source" style="display:inline">
