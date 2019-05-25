@@ -44,7 +44,7 @@
                 <span style="font-size: 12px;font-weight: 100;"></span>
             </div>
             <div class="navbar-header pull-right manual-menu">
-<a href="http://localhost:8080" id="printSinglePage" class="btn btn-info" style="margin-right: 10px;"><i class="fa"></i> 清无时空</a>
+<a href="http://heaven:8080" id="printSinglePage" class="btn btn-info" style="margin-right: 10px;"><i class="fa"></i> 清无时空</a>
 {{/*<a href="javascript:window.print();" id="printSinglePage" class="btn btn-default" style="margin-right: 10px;"><i class="fa fa-print"></i> 打印</a>*/}}
                 {{if gt .Member.MemberId 0}}
                 {{if eq .Model.RoleId 0 1 2}}
