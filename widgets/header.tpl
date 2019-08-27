@@ -17,7 +17,7 @@
                         <a href="{{urlfor "BlogController.List" }}" title="文章">文章</a>
                     </li>
                     <li {{if eq .ControllerName "QingwuController"}}{{if eq  .ActionName "List" "Index"}}class="active"{{end}}{{end}}>
-                        <a href="{{urlfor "QingwuController.List" }}" title="最近">R</a>
+                        <a href="http://heaven" title="清无时空">L</a>
                     </li>
                 </ul>
                 <div class="searchbar pull-left visible-lg-inline-block visible-md-inline-block">
@@ -35,12 +35,12 @@
                     background-color:gray;">
                                 <b>L</b>
                 </a>
-                <a href="http://heaven" class="navbar-brand" title="QingwuHeaven"
+                <a href="{{urlfor "QingwuController.List" }}" class="navbar-brand" title="最近"
                 style="font-size:1.2em;
                     margin-left:3px;
                     color:white;
                     background-color:green;">
-                    <b>H</b>
+                    <b>R</b>
                 </a>
             </nav>
 
