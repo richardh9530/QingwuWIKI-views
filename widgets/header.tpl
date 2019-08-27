@@ -17,7 +17,7 @@
                         <a href="{{urlfor "BlogController.List" }}" title="文章">文章</a>
                     </li>
                     <li {{if eq .ControllerName "QingwuController"}}{{if eq  .ActionName "List" "Index"}}class="active"{{end}}{{end}}>
-                        <a href="http://heaven" title="清无时空">L</a>
+                        <a href="http://heaven" title="清无时空">H</a>
                     </li>
                 </ul>
                 <div class="searchbar pull-left visible-lg-inline-block visible-md-inline-block">
