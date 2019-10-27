@@ -36,6 +36,19 @@
     <header class="navbar navbar-static-top manual-head" role="banner">
         <div class="container-fluid">
             <div class="navbar-header pull-left manual-title">
+            <div class="dropdown pull-left" style="margin-right: 10px;">
+                <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-exchange" aria-hidden="true"></i> 切换项目 <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="margin-top: -5px;">
+<li><a href="/docs/wisdom" target="_self">智慧清无</a> </li>
+<li><a href="/docs/research" target="_self">Research</a> </li>
+<li><a href="/docs/computer" target="_self">CS编程相关</a> </li>
+<li><a href="/docs/encyclopedia" target="_self">清无百科</a> </li>
+<li><a href="/docs/basics" target="_self">学科基础知识</a> </li>
+<li><a href="/docs/books" target="_self">清无典藏书库</a> </li>
+                </ul>
+            </div>
                 <span class="slidebar" id="slidebar"><i class="fa fa-align-justify"></i></span>
                 <a href="{{urlfor "DocumentController.Index" ":key" .Model.Identify}}" title="{{.Model.BookName}}" class="book-title">{{.Model.BookName}}</a>
                 [<a href="/qingwu/view_knowledge_graph/{{.Model.BookId}}">
@@ -43,8 +56,11 @@
                 </a>]
                 <span style="font-size: 12px;font-weight: 100;"></span>
             </div>
-            <div class="navbar-header pull-right manual-menu">
-<a href="http://heaven/heaven/" id="printSinglePage" class="btn btn-info" style="margin-right: 10px;"><i class="fa"></i> 清无时空</a>
+<a href="http://heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> WisdomQingwu</a>
+<a href="http://heaven/heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> 清无时空</a>
+
+<div class="navbar-header pull-right manual-menu">
+{{/*<a href="http://heaven/heaven/" id="printSinglePage" class="btn btn-info" style="margin-right: 10px;"><i class="fa"></i> 清无时空</a>*/}}
 {{/*<a href="javascript:window.print();" id="printSinglePage" class="btn btn-default" style="margin-right: 10px;"><i class="fa fa-print"></i> 打印</a>*/}}
                 {{if gt .Member.MemberId 0}}
                 {{if eq .Model.RoleId 0 1 2}}

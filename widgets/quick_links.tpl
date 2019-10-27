@@ -10,12 +10,12 @@
             <div class="modal-body">
                 <div class="form-group"><!--group 0 ## add by Qingwu-->
                     <div class="col-sm-6">
-                        <a href="/api/schedules/edit/" class="btn btn-primary active" role="button" style="width:100%">
+                        <a href="/api/wisdom/edit/" class="btn btn-primary active" role="button" style="width:100%">
                             编辑-清无记事
                         </a>
                     </div>
                     <div class="col-sm-6">
-                        <a href="/book/schedules/setting" class="btn btn-primary active" role="button" style="width:100%">
+                        <a href="/book/wisdom/setting" class="btn btn-primary active" role="button" style="width:100%">
                             设置-清无记事
                         </a>
                     </div>

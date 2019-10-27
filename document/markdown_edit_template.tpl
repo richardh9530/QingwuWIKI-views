@@ -100,15 +100,15 @@
         </div>
 
         <div class="editormd-group pull-right">
-            <a href="javascript:;" data-toggle="tooltip" data-title="关闭实时预览"><i class="fa fa-eye-slash first" name="watch" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="发布"><i class="fa fa-cloud-upload first" name="release"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="关闭实时预览"><i class="fa fa-eye-slash item" name="watch" unselectable="on"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="修改历史"><i class="fa fa-history item" name="history" aria-hidden="true"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="边栏"><i class="fa fa-columns item" aria-hidden="true" name="sidebar"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="使用帮助"><i class="fa fa-question-circle-o last" aria-hidden="true" name="help"></i></a>
         </div>
 
-        <div class="editormd-group">
-<a href="javascript:;" data-toggle="tooltip" data-title="预览"><i class="fa fa-eye first" name="preview" aria-hidden="true"></i></a>
-<a href="javascript:;" data-toggle="tooltip" data-title="发布"><i class="fa fa-cloud-upload last" name="release"></i></a>
+        <div class="editormd-group-special">
+<a href="javascript:;" data-toggle="tooltip" data-title="预览"><i class="fa fa-eye" name="preview" aria-hidden="true">预览</i></a>
         </div>
 
         <div class="editormd-group">
