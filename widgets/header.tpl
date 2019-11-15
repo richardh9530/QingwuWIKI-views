@@ -18,12 +18,12 @@
                     </li>
                     <li {{if eq .ControllerName "QingwuController"}}{{if eq  .ActionName "List" "Index"}}class="active"{{end}}{{end}}>
                         {{/*<a href="http://heaven/heaven/" title="清无时空">H</a>*/}}
-                        <a href="http://heaven/heaven/" class="navbar-brand" title="清无时空"
+                        <a href="http://heaven/" class="navbar-brand" title="WisdomQingwu"
                             style="font-size:1.2em;
                             margin-left:0.1px;
                             color:white;
                             background-color:gray;">
-                            <b>H</b>
+                            <b>W</b>
                         </a>
                     </li>
                 </ul>
