@@ -56,6 +56,8 @@
                 </a>]
                 <span style="font-size: 12px;font-weight: 100;"></span>
             </div>
+                	&nbsp;
+<a href="{{urlfor "HomeController.Index"}}" class="btn btn-default"><i class="fa fa-home" aria-hidden="true"></i> 首页</a>
 <a href="http://heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> WisdomQingwu</a>
 <a href="http://heaven/heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> 清无时空</a>
 
@@ -72,9 +74,9 @@
                 </div>
                 {{end}}
                 {{end}}
-                <div class="dropdown pull-right" style="margin-right: 10px;">
+                {{/*<div class="dropdown pull-right" style="margin-right: 10px;">
                     <a href="{{urlfor "HomeController.Index"}}" class="btn btn-default"><i class="fa fa-home" aria-hidden="true"></i> 首页</a>
-                </div>
+                </div>*/}}
                 <div class="dropdown pull-right" style="margin-right: 10px;">
                 {{if eq .Model.PrivatelyOwned 0}}
                 {{if .Model.IsEnableShare}}
