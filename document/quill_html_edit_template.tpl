@@ -201,8 +201,41 @@
             <a href="javascript:;" data-toggle="tooltip" data-title="撤销 (Ctrl-Z)" class="ql-undo"><i class="fa fa-undo first" name="undo" unselectable="on"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="重做 (Ctrl-Y)" class="ql-redo"><i class="fa fa-repeat last" name="redo" unselectable="on"></i></a>
         </div>
-
+        <div class="editor-group">
+            <select data-toggle="tooltip" data-title="字号" title="字号" class="ql-size editor-item-select editor-item-single-select"></select>
+        </div>
+        <div class="editor-group">
+            <button data-toggle="tooltip" data-title="粗体" class="ql-bold editor-item editor-item-first"></button>
+            <button data-toggle="tooltip" data-title="斜体" class="ql-italic editor-item"></button>
+            <button data-toggle="tooltip" data-title="删除线" class="ql-strike editor-item"></button>
+            <button data-toggle="tooltip" data-title="下划线" class="ql-underline editor-item editor-item-last"></button>
+        </div>
+        <div class="editor-group">
+            <button data-toggle="tooltip" data-title="标题一" class="ql-header editor-item editor-item-first" value="1"></button>
+            <button data-toggle="tooltip" data-title="标题二" class="ql-header editor-item" value="2"></button>
+            <button data-toggle="tooltip" data-title="标题三" class="ql-header editor-item" value="3"></button>
+            <button data-toggle="tooltip" data-title="标题四" class="ql-header editor-item" value="4"></button>
+            <button data-toggle="tooltip" data-title="标题五" class="ql-header editor-item" value="5"></button>
+            <button data-toggle="tooltip" data-title="标题六" class="ql-header editor-item editor-item-last" value="6"></button>
+        </div>
+        <div class="editor-group">
+            <button data-toggle="tooltip" data-title="无序列表" class="ql-list editor-item editor-item-first" value="ordered"></button>
+            <button data-toggle="tooltip" data-title="有序列表" class="ql-list editor-item" value="bullet"></button>
+            <button data-toggle="tooltip" data-title="右缩进" class="ql-indent editor-item" value="-1"></button>
+            <button data-toggle="tooltip" data-title="左缩进" class="ql-indent editor-item" value="+1"></button>
+            <button data-toggle="tooltip" data-title="下标" class="ql-script editor-item" value="sub"></button>
+            <button data-toggle="tooltip" data-title="上标" class="ql-script editor-item editor-item-last" value="super"></button>
+        </div>
         <div class="editor-group ql-formats">
+            <button data-toggle="tooltip" data-title="链接" class="ql-link editor-item editor-item-first"></button>
+            <button data-toggle="tooltip" data-title="清空格式" class="ql-clean editor-item"></button>
+            <button data-toggle="tooltip" data-title="添加图片" class="ql-image editor-item"></button>
+            <button data-toggle="tooltip" data-title="添加视频" class="ql-video editor-item"></button>
+            <button data-toggle="tooltip" data-title="代码块" class="ql-code-block editor-item"></button>
+            <button data-toggle="tooltip" data-title="引用" class="ql-blockquote editor-item"><i class="fa fa-quote-right item" name="quote" unselectable="on"></i></button>
+            <button data-toggle="tooltip" data-title="公式" class="ql-formula editor-item"><i class="fa fa-tasks item" name="tasks" aria-hidden="true"></i></button>
+            <select data-toggle="tooltip" data-title="字体颜色" class="ql-color ql-picker ql-color-picker editor-item-select" ></select>
+            <select data-toggle="tooltip" data-title="背景颜色" class="ql-background editor-item-select"></select>
             <a href="javascript:;" data-toggle="tooltip" data-title="附件" id="btnUploadFile"><i class="fa fa-paperclip last" aria-hidden="true" name="attachment"></i></a>
 
         </div>
@@ -220,10 +253,7 @@
         </div>
         <div class="manual-editor-container" id="manualEditorContainer" style="min-width: 980px;">
             <div class="manual-editormd" style="bottom: 0;">
-                <div id="content" class="manual-editormd-active ql-editor ql-blank  editor-content editor" name="content">
-                <div id="docEditor" style="display:none">
-            </div>
-
+                <div id="docEditor" class="manual-editormd-active ql-editor ql-blank  editor-content"></div>
                 <div class="manual-editor-status" style="border-top: 1px solid #DDDDDD;">
                     <div id="attachInfo" class="item">0 个附件</div>
                 </div>
@@ -346,20 +376,14 @@
 <script src="{{cdnjs "/static/jstree/3.3.4/jstree.min.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/katex/katex.min.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/to-markdown/dist/to-markdown.js"}}" type="text/javascript"></script>
-
+<script src="{{cdnjs "/static/quill/quill.js"}}" type="text/javascript"></script>
+<script src="{{cdnjs "/static/quill/quill.icons.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/layer/layer.js"}}" type="text/javascript" ></script>
 <script src="{{cdnjs "/static/js/jquery.form.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/editor.md/lib/highlight/highlight.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/array.js" "version"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/editor.js"}}" type="text/javascript"></script>
-
-
-
-<script src="{{cdnjs "/static/tinymce/js/tinymce/tinymce.min.js"}}" type="text/javascript"></script>
-
-<script src="{{cdnjs "/static/js/tinymce.js"}}" type="text/javascript"></script>
-
-
+<script src="{{cdnjs "/static/js/quill.js"}}" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
         hljs.configure({   // optionally configure hljs
