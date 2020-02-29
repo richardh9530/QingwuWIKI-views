@@ -202,8 +202,16 @@
             <a href="javascript:;" data-toggle="tooltip" data-title="重做 (Ctrl-Y)" class="ql-redo"><i class="fa fa-repeat last" name="redo" unselectable="on"></i></a>
         </div>
 
+        <div class="editor-group">
+            <a href="javascript:;" data-toggle="tooltip" data-title="完成" class="ql-finish"><i class="fa fa-check-square" name="preview" unselectable="on"></i></a>  <!--eye-->
+        </div>
+
         <div class="editor-group ql-formats">
             <a href="javascript:;" data-toggle="tooltip" data-title="附件" id="btnUploadFile"><i class="fa fa-paperclip last" aria-hidden="true" name="attachment"></i></a>
+
+        </div>
+
+        <div class="editor-group" id="editor_toolbar">
 
         </div>
 
@@ -218,9 +226,9 @@
             </div>
             <div class="manual-tree" id="sidebar"> </div>
         </div>
-        <div class="manual-editor-container" id="manualEditorContainer" style="min-width: 980px;">
+        <div class="manual-editor-container" id="manualEditorContainer" style="min-width: 800px;">
             <div class="manual-editormd" style="bottom: 0;">
-                <div id="content" class="manual-editormd-active ql-editor ql-blank  editor-content editor" name="content">
+                <div id="content" class="manual-editormd-active ql-editor ql-blank  editor-content editor" name="content"><!--正文-->
                 <div id="docEditor" style="display:none">
             </div>
 

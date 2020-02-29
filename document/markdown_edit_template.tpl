@@ -71,14 +71,14 @@
             <a href="javascript:;" data-toggle="tooltip" data-title="斜体"><i class="fa fa-italic item" name="italic" unselectable="on"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="删除线"><i class="fa fa-strikethrough last" name="del" unselectable="on"></i></a>
         </div>
-        <div class="editormd-group">
+        <!--<div class="editormd-group">
             <a href="javascript:;" data-toggle="tooltip" data-title="标题一"><i class="fa editormd-bold first" name="h1" unselectable="on">H1</i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="标题二"><i class="fa editormd-bold item" name="h2" unselectable="on">H2</i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="标题三"><i class="fa editormd-bold item" name="h3" unselectable="on">H3</i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="标题四"><i class="fa editormd-bold item" name="h4" unselectable="on">H4</i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="标题五"><i class="fa editormd-bold item" name="h5" unselectable="on">H5</i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="标题六"><i class="fa editormd-bold last" name="h6" unselectable="on">H6</i></a>
-        </div>
+        </div>--><!--不需要展示-->
         <div class="editormd-group">
             <a href="javascript:;" data-toggle="tooltip" data-title="无序列表"><i class="fa fa-list-ul first" name="list-ul" unselectable="on"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="有序列表"><i class="fa fa-list-ol item" name="list-ol" unselectable="on"></i></a>
@@ -108,7 +108,7 @@
         </div>
 
         <div class="editormd-group-special">
-<a href="javascript:;" data-toggle="tooltip" data-title="预览"><i class="fa fa-eye" name="preview" aria-hidden="true">预览</i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="完成"><i class="fa fa-check-square" name="preview" aria-hidden="true">&nbsp;完成</i></a>  <!--eye-->
         </div>
 
         <div class="editormd-group">
