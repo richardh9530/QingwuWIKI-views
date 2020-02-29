@@ -31,12 +31,8 @@
     <link href="{{cdncss "/static/bootstrap/css/bootstrap.min.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/font-awesome/css/font-awesome.min.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/jstree/3.3.4/themes/default/style.min.css"}}" rel="stylesheet">
+    <link href="{{cdncss "/static/editor.md/css/editormd.css" "version"}}" rel="stylesheet">
 
-    <!-- tui-editor Styles -->
-    <link href="{{cdncss "/static/tui-editor/css/tui-editor.css"}}" rel="stylesheet"></link>
-    <link href="{{cdncss "/static/tui-editor/css/tui-editor-contents.css"}}" rel="stylesheet"></link>
-    <link href="{{cdncss "/static/tui-editor/css/codemirror.css"}}" rel="stylesheet"></link>
-    <link href="{{cdncss "/static/tui-editor/css/github.min.css"}}" rel="stylesheet"></link>
     <link href="{{cdncss "/static/css/jstree.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/webuploader/webuploader.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/css/markdown.css" "version"}}" rel="stylesheet">
@@ -70,14 +66,42 @@
             <a href="javascript:;" data-toggle="tooltip" data-title="撤销 (Ctrl-Z)"><i class="fa fa-undo first" name="undo" unselectable="on"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="重做 (Ctrl-Y)"><i class="fa fa-repeat last" name="redo" unselectable="on"></i></a>
         </div>
-
-
         <div class="editormd-group">
-            <a href="javascript:;" data-toggle="tooltip" data-title="附件"><i class="fa fa-paperclip" aria-hidden="true" name="attachment"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="粗体"><i class="fa fa-bold first" name="bold" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="斜体"><i class="fa fa-italic item" name="italic" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="删除线"><i class="fa fa-strikethrough last" name="del" unselectable="on"></i></a>
+        </div>
+        <!--<div class="editormd-group">
+            <a href="javascript:;" data-toggle="tooltip" data-title="标题一"><i class="fa editormd-bold first" name="h1" unselectable="on">H1</i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="标题二"><i class="fa editormd-bold item" name="h2" unselectable="on">H2</i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="标题三"><i class="fa editormd-bold item" name="h3" unselectable="on">H3</i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="标题四"><i class="fa editormd-bold item" name="h4" unselectable="on">H4</i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="标题五"><i class="fa editormd-bold item" name="h5" unselectable="on">H5</i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="标题六"><i class="fa editormd-bold last" name="h6" unselectable="on">H6</i></a>
+        </div>--><!--不需要展示-->
+        <div class="editormd-group">
+            <a href="javascript:;" data-toggle="tooltip" data-title="无序列表"><i class="fa fa-list-ul first" name="list-ul" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="有序列表"><i class="fa fa-list-ol item" name="list-ol" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="横线"><i class="fa fa-minus last" name="hr" unselectable="on"></i></a>
+        </div>
+        <div class="editormd-group">
+            <a href="javascript:;" data-toggle="tooltip" data-title="链接"><i class="fa fa-link first" name="link" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="引用链接"><i class="fa fa-anchor item" name="reference-link" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="添加图片"><i class="fa fa-picture-o item" name="image" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="行内代码"><i class="fa fa-code item" name="code" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="代码块" unselectable="on"><i class="fa fa-file-code-o item" name="code-block" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="添加表格"><i class="fa fa-table item" name="table" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="引用"><i class="fa fa-quote-right item" name="quote" unselectable="on"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="GFM 任务列表"><i class="fa fa-tasks item" name="tasks" aria-hidden="true"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="附件"><i class="fa fa-paperclip item" aria-hidden="true" name="attachment"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="Json转换为表格"><i class="fa fa-wrench item" aria-hidden="true" name="json"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="模板"><i class="fa fa-tachometer last" name="template"></i></a>
+
         </div>
 
         <div class="editormd-group pull-right">
             <a href="javascript:;" data-toggle="tooltip" data-title="发布"><i class="fa fa-cloud-upload first" name="release"></i></a>
+            <a href="javascript:;" data-toggle="tooltip" data-title="关闭实时预览"><i class="fa fa-eye-slash item" name="watch" unselectable="on"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="修改历史"><i class="fa fa-history item" name="history" aria-hidden="true"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="边栏"><i class="fa fa-columns item" aria-hidden="true" name="sidebar"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="使用帮助"><i class="fa fa-question-circle-o last" aria-hidden="true" name="help"></i></a>
@@ -236,22 +260,181 @@
         </div>
     </div>
 </div>
+<!--- 选择模板--->
+<div class="modal fade" id="documentTemplateModal" tabindex="-1" role="dialog" aria-labelledby="请选择模板类型" aria-hidden="true">
+    <div class="modal-dialog" style="width: 780px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modal-title">请选择模板类型</h4>
+            </div>
+            <div class="modal-body template-list">
+                <div class="container">
+                    <div class="section">
+                        <a data-type="normal" href="javascript:;"><i class="fa fa-file-o"></i></a>
+                        <h3><a data-type="normal" href="javascript:;">普通文档</a></h3>
+                        <ul>
+                            <li>默认类型</li>
+                            <li>简单的文本文档</li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <a data-type="api" href="javascript:;"><i class="fa fa-file-code-o"></i></a>
+                        <h3><a data-type="api" href="javascript:;">API文档</a></h3>
+                        <ul>
+                            <li>用于API文档速写</li>
+                            <li>支持代码高亮</li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <a data-type="code" href="javascript:;"><i class="fa fa-book"></i></a>
 
+                        <h3><a data-type="code" href="javascript:;">数据字典</a></h3>
+                        <ul>
+                            <li>用于数据字典显示</li>
+                            <li>表格支持</li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <a data-type="customs" href="javascript:;"><i class="fa fa-briefcase"></i></a>
+
+                        <h3><a data-type="customs" href="javascript:;">自定义模板</a></h3>
+                        <ul>
+                            <li>自定义模板</li>
+                            <li>支持任意类型文档</li>
+                            <li>可以设置为全局模板</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--- 显示自定义模板--->
+<div class="modal fade" id="displayCustomsTemplateModal" tabindex="-1" role="dialog" aria-labelledby="displayCustomsTemplateModalLabel">
+    <div class="modal-dialog" role="document" style="width: 750px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">自定义模板</h4>
+            </div>
+            <div class="modal-body text-center" id="displayCustomsTemplateList">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <td>#</td>
+                            <td class="col-sm-3">模板名称</td>
+                            <td class="col-sm-2">模板类型</td>
+                            <td class="col-sm-2">创建人</td>
+                            <td class="col-sm-3">创建时间</td>
+                            <td class="col-sm-2">操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="7" class="text-center">暂无数据</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--- 创建模板--->
+<div class="modal fade" id="saveTemplateModal" tabindex="-1" role="dialog" aria-labelledby="saveTemplateModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="{{urlfor "TemplateController.Add"}}" id="saveTemplateForm" class="form-horizontal">
+                <input type="hidden" name="identify" value="{{.Model.Identify}}">
+                <input type="hidden" name="content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">保存为模板</h4>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">模板名称 <span class="error-message">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" name="template_name" id="templateName" placeholder="模板名称" class="form-control"  maxlength="50">
+                        </div>
+                    </div>
+                    {{if eq .Member.Role 0 1}}
+                    <div class="form-group">
+                        <div class="col-lg-6">
+                            <label>
+                                <input type="radio" name="is_global" value="1"> 全局<span class="text">(任何项目都可用)</span>
+                            </label>
+                        </div>
+                        <div class="col-lg-6">
+                            <label>
+                                <input type="radio" name="is_global" value="0" checked> 项目<span class="text">(只有当前项目可用)</span>
+                            </label>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    {{end}}
+                </div>
+                <div class="modal-footer">
+                    <span class="error-message show-error-message"></span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary" id="btnSaveTemplate" data-loading-text="保存中...">立即保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--- json转换为表格 -->
+<div class="modal fade" id="convertJsonToTableModal" tabindex="-1" role="dialog" aria-labelledby="convertJsonToTableModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" id="convertJsonToTableForm" class="form-horizontal">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Json转换为表格</h4>
+                </div>
+                <div class="modal-body text-center">
+                        <textarea type="text" name="jsonContent" id="jsonContent" placeholder="Json" class="form-control" style="height: 300px;resize: none"></textarea>
+
+                </div>
+                <div class="modal-footer">
+                    <span id="json-error-message"></span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="btnInsertTable" data-loading-text="保存中...">插入</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<template id="template-normal">
+{{template "document/template_normal.tpl"}}
+</template>
+<template id="template-api">
+{{template "document/template_api.tpl"}}
+</template>
+<template id="template-code">
+{{template "document/template_code.tpl"}}
+</template>
 <script src="{{cdnjs "/static/js/array.js" "version"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/vuejs/vue.min.js"}}" type="text/javascript"></script>
 {{template "widgets/quick_links.tpl" .}}
 <script src="{{cdnjs "/static/webuploader/webuploader.min.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/jstree/3.3.4/jstree.min.js"}}" type="text/javascript"></script>
-
-<!-- tui-editor Scripts -->
-<script src="{{cdnjs "/static/tui-editor/js/tui-editor-Editor-full.js"}}" type="text/javascript" ></script>
-
+<script src="{{cdnjs "/static/editor.md/editormd.js" "version"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/layer/layer.js"}}" type="text/javascript" ></script>
 <script src="{{cdnjs "/static/js/jquery.form.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/array.js" "version"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/editor.js" "version"}}" type="text/javascript"></script>
-<script src="{{cdnjs "/static/js/tuieditor.js" "version"}}" type="text/javascript"></script>
-
+<script src="{{cdnjs "/static/js/markdown.js" "version"}}" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
         $("#attachInfo").on("click",function () {

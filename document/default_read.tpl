@@ -311,6 +311,7 @@ $(function () {
             return $(body).highlight(window.keyword);
         });
     });
+    $("table").tablesorter({debug: false});  // table 排序
 });
 </script>
 {{.Scripts}}
