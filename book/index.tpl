@@ -75,8 +75,8 @@
                                             <li><a :href="'{{.BaseUrl}}/api/' + item.identify + '/edit'" target="_blank">编辑</a></li>
                                             </template>
                                             <template v-if="item.role_id == 0">
-                                            <li><a :href="'javascript:deleteBook(\''+item.identify+'\');'">删除</a></li>
-                                            <li><a :href="'javascript:copyBook(\''+item.identify+'\');'">复制</a></li>
+                                            {{/*<li><a :href="'javascript:deleteBook(\''+item.identify+'\');'">删除</a></li>*/}}
+                                            {{/*<li><a :href="'javascript:copyBook(\''+item.identify+'\');'">复制</a></li>*/}}
                                             </template>
                                         </ul>
 
