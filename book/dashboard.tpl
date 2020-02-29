@@ -60,7 +60,10 @@
                     <div class="dashboard">
                         <div class="pull-left" style="width: 200px;margin-bottom: 15px;">
                             <div class="book-image">
-                                <img src="{{cdnimg .Model.Cover}}" onerror="this.src='{{cdnimg "/static/images/book.jpg"}}'" style="border: 1px solid #666;width: 175px;">
+                                <a href="{{urlfor "DocumentController.Index" ":key" .Model.Identify}}" title="{{.Model.BookName}}-{{.Model.CreateName}}">
+                                    <img src="{{cdnimg .Model.Cover}}" onerror="this.src='{{cdnimg "/static/images/book.jpg"}}'" style="border: 1px solid #666;width: 175px;">
+                                </a>
+
                             </div>
                         </div>
 
