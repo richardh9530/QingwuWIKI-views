@@ -21,13 +21,20 @@
     <link href="{{cdncss "/static/nprogress/nprogress.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/css/kancloud.css" "version"}}" rel="stylesheet">
     <link href="{{cdncss "/static/css/jstree.css"}}" rel="stylesheet">
-    <link href="{{cdncss "/static/editor.md/lib/mermaid/mermaid.css" "version"}}" rel="stylesheet">
-    <link href="{{cdncss "/static/editor.md/lib/sequence/sequence-diagram-min.css" "version"}}" rel="stylesheet">
-    <link href="{{cdncss "/static/editor.md/css/editormd.preview.css" "version"}}" rel="stylesheet">
-    <link href="{{cdncss "/static/css/markdown.preview.css" "version"}}" rel="stylesheet">
-    <link href="{{cdncss (print "/static/editor.md/lib/highlight/styles/" .HighlightStyle ".css") "version"}}" rel="stylesheet">
+
+    {{/*<link href="{{cdncss "/static/editor.md/lib/mermaid/mermaid.css" "version"}}" rel="stylesheet">*/}}
+    {{/*<link href="{{cdncss "/static/editor.md/lib/sequence/sequence-diagram-min.css" "version"}}" rel="stylesheet">*/}}
+    {{/*<link href="{{cdncss "/static/editor.md/css/editormd.preview.css" "version"}}" rel="stylesheet">*/}}
+    {{/*<link href="{{cdncss "/static/css/markdown.preview.css" "version"}}" rel="stylesheet">*/}}
+    {{/*<link href="{{cdncss (print "/static/editor.md/lib/highlight/styles/" .HighlightStyle ".css") "version"}}" rel="stylesheet">*/}}
+
     <link href="{{cdncss "/static/katex/katex.min.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/css/print.css" "version"}}" media="print" rel="stylesheet">
+    <!-- tui-editor Styles -->
+    <link href="{{cdncss "/static/tui-editor/css/tui-editor.css"}}" rel="stylesheet"></link>
+    <link href="{{cdncss "/static/tui-editor/css/tui-editor-contents.css"}}" rel="stylesheet"></link>
+    <link href="{{cdncss "/static/tui-editor/css/codemirror.css"}}" rel="stylesheet"></link>
+    <link href="{{cdncss "/static/tui-editor/css/github.min.css"}}" rel="stylesheet"></link>
 
     <script type="text/javascript">window.book={"identify":"{{.Model.Identify}}"};</script>
 </head>
@@ -171,7 +178,7 @@
                 </div>
                 <div class="article-content">
                     <div class="article-body  {{if eq .Model.Editor "markdown"}}markdown-body editormd-preview-container{{else}}editor-content{{end}}"  id="page-content">
-                        {{.Content}}
+{{/*                        {{.Content}}*/}}
                     </div>
                     <!--
                     {{/*
@@ -298,8 +305,13 @@
 <script src="{{cdnjs "/static/editor.md/lib/highlight/highlight.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/jquery.highlight.js"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/jquery.tablesorter.min.js"}}" type="text/javascript"></script>
+<!-- tui-editor Scripts -->
+<script src="{{cdnjs "/static/tui-editor/js/tui-editor-Viewer-full.js"}}" type="text/javascript" ></script>
+
 <script src="{{cdnjs "/static/js/kancloud.js" "version"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/splitbar.js" "version"}}" type="text/javascript"></script>
+
+
 <script type="text/javascript">
 $(function () {
     $("#searchList").on("click","a",function () {
@@ -312,6 +324,12 @@ $(function () {
         });
     });
     $("table").tablesorter({debug: false});  // table 排序
+
+    /**
+     * tui-editor 新增
+     */
+    load_html_to_tui_viewer('{{.Content}}')  // 加载正文
+
 });
 </script>
 {{.Scripts}}
