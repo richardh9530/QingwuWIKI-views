@@ -189,10 +189,29 @@
 <body>
 
 <div class="m-manual manual-editor">
-    <div class="manual-head btn-toolbar" id="editormd-tools"  style="min-width: 1260px;" data-role="editor-toolbar" data-target="#editor">
-        <div class="editor-group">
+    <div class="manual-head btn-toolbar" id="editormd-tools"  style="min-width: 1260px;margin-left:5px;" data-role="editor-toolbar" data-target="#editor">
+        &nbsp;&nbsp;
+        <div class="editormd-group dropdown pull-left" style="margin-right: 10px;">
+            <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:4px 12px">
+            <i class="fa fa-exchange" aria-hidden="true"></i> 切换编辑器 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="margin-top: -5px;">
+                <li><a href="javascript:change_to_markdown_editor();">Markdown编辑器</a></li>
+                {{/*<li><a href="{{urlfor "BookController.Setting" ":key" .Model.Identify}}" class="item">Markdown编辑器</a></li>*/}}
+            </ul>
+        </div>
+
+    	<div class="editor-group">
             <a href="{{urlfor "BookController.Index"}}" data-toggle="tooltip" data-title="返回"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         </div>
+
+
+        <div class="editor-group">
+            <a href="javascript:;" data-toggle="tooltip" data-title="完成" class="ql-finish"><i class="fa fa-check-square" name="preview" unselectable="on"></i></a>  <!--eye-->
+        </div>
+
+
+
         <div class="editor-group">
             <a href="javascript:;" id="markdown-save" data-toggle="tooltip" data-title="保存" class="disabled save"><i class="fa fa-save first" aria-hidden="true" name="save"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="发布" id="btnRelease"><i class="fa fa-cloud-upload last" name="release" aria-hidden="true"></i></a>
@@ -200,10 +219,6 @@
         <div class="editor-group">
             <a href="javascript:;" data-toggle="tooltip" data-title="撤销 (Ctrl-Z)" class="ql-undo"><i class="fa fa-undo first" name="undo" unselectable="on"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="重做 (Ctrl-Y)" class="ql-redo"><i class="fa fa-repeat last" name="redo" unselectable="on"></i></a>
-        </div>
-
-        <div class="editor-group">
-            <a href="javascript:;" data-toggle="tooltip" data-title="完成" class="ql-finish"><i class="fa fa-check-square" name="preview" unselectable="on"></i></a>  <!--eye-->
         </div>
 
         <div class="editor-group ql-formats">
@@ -367,7 +382,7 @@
 
 <script src="{{cdnjs "/static/js/tinymce.js"}}" type="text/javascript"></script>
 
-
+{{template "document/setting_to_markdown_editor.tpl" .}}
 <script type="text/javascript">
     $(function () {
         hljs.configure({   // optionally configure hljs
@@ -457,6 +472,16 @@
             }
         });
     });
+
+    function change_to_markdown_editor(){
+        $("#bookEditForm").ajaxForm({
+            success : function (res) {
+                // 返回编辑
+                window.location.href = {{urlfor "DocumentController.Edit" ":key" .Model.Identify ":id" ""}}
+            }
+        });
+        $("#bookEditForm").submit();
+    }
 </script>
 </body>
 </html>

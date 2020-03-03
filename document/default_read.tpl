@@ -326,7 +326,6 @@ $(function () {
             return $(body).highlight(window.keyword);
         });
     });
-    $("table").tablesorter({debug: false});  // table 排序
 
     /**
      * tui-editor 新增
@@ -336,6 +335,8 @@ $(function () {
     }else{
     	$("#page-content").html('{{.Content}}')
     }
+    console.log(document.getElementsByTagName("table"))
+    $("table").tablesorter({debug: false});  // table 排序
 
 
 });

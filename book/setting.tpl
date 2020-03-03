@@ -165,6 +165,9 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" id="btnSaveBookInfo" class="btn btn-success" data-loading-text="保存中...">保存修改</button>
+                    <button type="submit" id="btnSaveBookInfoAndEdit" class="btn btn-info" data-loading-text="保存中...">
+                    	<span id="flag_return_button">返回编辑</span>
+                    </button>
                     <span id="form-error-message" class="error-message"></span>
                 </div>
                 </form>
@@ -322,6 +325,7 @@
 <script src="{{cdnjs "/static/select2/4.0.5/js/i18n/zh-CN.js"}}"></script>
 <script src="{{cdnjs "/static/js/main.js"}}" type="text/javascript"></script>
 <script type="text/javascript">
+	var return_button_clicked=false;
     $(function () {
         $("#upload-logo-panel").on("hidden.bs.modal",function () {
             $("#upload-logo-panel").find(".modal-body").html(window.modalHtml);
@@ -381,6 +385,11 @@
         $("#token").on("focus",function () {
             $(this).select();
         });
+        $("#flag_return_button").on("click", function(){
+            $("#bookEditForm").submit();
+            window.location.href = {{urlfor "DocumentController.Edit" ":key" .Model.Identify ":id" ""}}
+        	return_button_clicked = true;
+        });
         $("#bookEditForm").ajaxForm({
             beforeSubmit : function () {
                 var bookName = $.trim($("#bookName").val());
@@ -391,7 +400,12 @@
             },
             success : function (res) {
                 if(res.errcode === 0){
-                    showSuccess("保存成功")
+                	if(return_button_clicked){
+                        // 返回编辑
+                		window.location.href = {{urlfor "DocumentController.Edit" ":key" .Model.Identify ":id" ""}}
+                    }else{
+                        showSuccess("保存成功")
+                    }
                 }else{
                     showError("保存失败")
                 }

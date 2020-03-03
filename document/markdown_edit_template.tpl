@@ -55,9 +55,26 @@
 
 <div class="m-manual manual-editor">
     <div class="manual-head" id="editormd-tools" style="min-width: 1200px; position:absolute;">
+
+        <div class="editormd-group dropdown pull-left" style="margin-right: 10px;">
+            <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:4px 12px">
+            <i class="fa fa-exchange" aria-hidden="true"></i> 切换编辑器 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="margin-top: -5px;">
+                <li><a href="javascript:change_to_html_editor();">HTML编辑器</a></li>
+                {{/*<li><a href="{{urlfor "BookController.Setting" ":key" .Model.Identify}}" class="item">HTML编辑器</a></li>*/}}
+            </ul>
+        </div>
+
         <div class="editormd-group">
             <a href="{{urlfor "BookController.Index"}}" data-toggle="tooltip" data-title="返回"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         </div>
+
+        <div class="editormd-group-special">
+            <a href="javascript:;" data-toggle="tooltip" data-title="完成"><i class="fa fa-check-square" name="preview" aria-hidden="true">&nbsp;完成</i></a>  <!--eye-->
+        </div>
+
+
         <div class="editormd-group">
             <a href="javascript:;" id="markdown-save" data-toggle="tooltip" data-title="保存" class="disabled save"><i class="fa fa-save first" aria-hidden="true" name="save"></i></a>
             <a href="javascript:;" id="markdown-template" data-toggle="tooltip" data-title="保存为模板" class="template"><i class="fa fa-briefcase last" aria-hidden="true" name="save-template"></i></a>
@@ -105,10 +122,6 @@
             <a href="javascript:;" data-toggle="tooltip" data-title="修改历史"><i class="fa fa-history item" name="history" aria-hidden="true"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="边栏"><i class="fa fa-columns item" aria-hidden="true" name="sidebar"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="使用帮助"><i class="fa fa-question-circle-o last" aria-hidden="true" name="help"></i></a>
-        </div>
-
-        <div class="editormd-group-special">
-            <a href="javascript:;" data-toggle="tooltip" data-title="完成"><i class="fa fa-check-square" name="preview" aria-hidden="true">&nbsp;完成</i></a>  <!--eye-->
         </div>
 
         <div class="editormd-group">
@@ -435,6 +448,7 @@
 <script src="{{cdnjs "/static/js/array.js" "version"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/editor.js" "version"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/markdown.js" "version"}}" type="text/javascript"></script>
+{{template "document/setting_to_html_editor.tpl" .}}
 <script type="text/javascript">
     $(function () {
         $("#attachInfo").on("click",function () {
@@ -508,6 +522,15 @@
             }
         });
     });
+    function change_to_html_editor(){
+        $("#bookEditForm").ajaxForm({
+            success : function (res) {
+                // 返回编辑
+                window.location.href = {{urlfor "DocumentController.Edit" ":key" .Model.Identify ":id" ""}}
+            }
+        });
+        $("#bookEditForm").submit();
+    }
 </script>
 </body>
 </html>
