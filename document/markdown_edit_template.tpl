@@ -76,6 +76,15 @@
             <a href="javascript:;" data-toggle="tooltip" data-title="附件"><i class="fa fa-paperclip" aria-hidden="true" name="attachment"></i></a>
         </div>
 
+        <div class="editormd-group dropdown pull-left" style="margin-right: 10px;">
+            <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:4px 12px">
+                <i class="fa fa-exchange" aria-hidden="true"></i> 切换编辑器 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="margin-top: -5px;">
+                <li><a href="/docs/wisdom" target="_self">HTML编辑器</a> </li>
+            </ul>
+        </div>
+
         <div class="editormd-group pull-right">
             <a href="javascript:;" data-toggle="tooltip" data-title="发布"><i class="fa fa-cloud-upload first" name="release"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="修改历史"><i class="fa fa-history item" name="history" aria-hidden="true"></i></a>

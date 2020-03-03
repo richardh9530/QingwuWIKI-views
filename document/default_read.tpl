@@ -22,11 +22,11 @@
     <link href="{{cdncss "/static/css/kancloud.css" "version"}}" rel="stylesheet">
     <link href="{{cdncss "/static/css/jstree.css"}}" rel="stylesheet">
 
-    {{/*<link href="{{cdncss "/static/editor.md/lib/mermaid/mermaid.css" "version"}}" rel="stylesheet">*/}}
-    {{/*<link href="{{cdncss "/static/editor.md/lib/sequence/sequence-diagram-min.css" "version"}}" rel="stylesheet">*/}}
-    {{/*<link href="{{cdncss "/static/editor.md/css/editormd.preview.css" "version"}}" rel="stylesheet">*/}}
-    {{/*<link href="{{cdncss "/static/css/markdown.preview.css" "version"}}" rel="stylesheet">*/}}
-    {{/*<link href="{{cdncss (print "/static/editor.md/lib/highlight/styles/" .HighlightStyle ".css") "version"}}" rel="stylesheet">*/}}
+    <link href="{{cdncss "/static/editor.md/lib/mermaid/mermaid.css" "version"}}" rel="stylesheet">
+    <link href="{{cdncss "/static/editor.md/lib/sequence/sequence-diagram-min.css" "version"}}" rel="stylesheet">
+    <link href="{{cdncss "/static/editor.md/css/editormd.preview.css" "version"}}" rel="stylesheet">
+    <link href="{{cdncss "/static/css/markdown.preview.css" "version"}}" rel="stylesheet">
+    <link href="{{cdncss (print "/static/editor.md/lib/highlight/styles/" .HighlightStyle ".css") "version"}}" rel="stylesheet">
 
     <link href="{{cdncss "/static/katex/katex.min.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/css/print.css" "version"}}" media="print" rel="stylesheet">
@@ -36,7 +36,10 @@
     <link href="{{cdncss "/static/tui-editor/css/codemirror.css"}}" rel="stylesheet"></link>
     <link href="{{cdncss "/static/tui-editor/css/github.min.css"}}" rel="stylesheet"></link>
 
-    <script type="text/javascript">window.book={"identify":"{{.Model.Identify}}"};</script>
+    <script type="text/javascript">
+    	window.book={"identify":"{{.Model.Identify}}"};
+    	window.use_tui = false;
+    </script>
 </head>
 <body>
 <div class="m-manual manual-mode-view manual-reader">
@@ -328,7 +331,12 @@ $(function () {
     /**
      * tui-editor 新增
      */
-    load_html_to_tui_viewer('{{.Content}}')  // 加载正文
+    if(window.use_tui){
+        load_html_to_tui_viewer('{{.Content}}')  // 加载正文
+    }else{
+    	$("#page-content").html('{{.Content}}')
+    }
+
 
 });
 </script>
