@@ -190,24 +190,19 @@
 
 <div class="m-manual manual-editor">
     <div class="manual-head btn-toolbar" id="editormd-tools"  style="min-width: 1260px;margin-left:5px;" data-role="editor-toolbar" data-target="#editor">
-        &nbsp;&nbsp;
-        <div class="editormd-group dropdown pull-left" style="margin-right: 10px;">
-            <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding:4px 12px">
-            <i class="fa fa-exchange" aria-hidden="true"></i> 切换编辑器 <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="margin-top: -5px;">
-                <li><a href="javascript:change_to_markdown_editor();">Markdown编辑器</a></li>
-                {{/*<li><a href="{{urlfor "BookController.Setting" ":key" .Model.Identify}}" class="item">Markdown编辑器</a></li>*/}}
-            </ul>
-        </div>
 
-    	<div class="editor-group">
+        <div class="editormd-group-special">
             <a href="{{urlfor "BookController.Index"}}" data-toggle="tooltip" data-title="返回"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         </div>
 
+        <div class="editormd-group-special">
+            <a href="javascript:change_to_markdown_editor();" data-toggle="tooltip" data-title="切换为Markdwon编辑器" >
+            	<i class="fa fa-exchange" aria-hidden="true">&nbsp;切换为markdown编辑器</i>
+            </a>
+        </div>
 
-        <div class="editor-group">
-            <a href="javascript:;" data-toggle="tooltip" data-title="完成" class="ql-finish"><i class="fa fa-check-square" name="preview" unselectable="on"></i></a>  <!--eye-->
+        <div class="editormd-group-special">
+            <a href="javascript:;" data-toggle="tooltip" data-title="完成" class="ql-finish"><i class="fa fa-check-square" name="preview" unselectable="on">&nbsp;完成</i></a>  <!--eye-->
         </div>
 
 
@@ -280,6 +275,21 @@
                             <p style="color: #999;font-size: 12px;">文档标识只能包含小写字母、数字，以及“-”和“_”符号,并且只能小写字母开头</p>
                         </div>
 
+                    </div>
+
+                    <div class="form-group">
+                    <div class="col-lg-6">
+                        <label>
+                            <input type="radio" name="is_open" value="1"> 展开<span class="text">(在阅读时会自动展开节点)</span>
+                        </label>
+                        </div>
+                        <div class="col-lg-6">
+                        <label>
+                        <input type="radio" name="is_open" value="0" checked> 关闭<span class="text">(在阅读时会关闭节点)</span>
+                        </label>
+                        </div>
+
+                        <div class="clearfix"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
