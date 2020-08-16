@@ -71,8 +71,8 @@
         </div>
 
         <div class="editormd-group">
-            <a href="javascript:;" id="view-origin-text" data-toggle="tooltip" data-title="查看原文" >
-            	<i class="fa fa-eye" aria-hidden="true" name="view-origin-text"></i>
+            <a href="javascript:;" id="view-origin-html" data-toggle="tooltip" data-title="查看原文" >
+            	<i class="fa fa-eye" aria-hidden="true" name="view-origin-html"></i>
             </a>
             {{/*<a href="javascript:;" id="edit-origin-text" data-toggle="tooltip" data-title="编辑原文" >*/}}
             {{/*	<i class="fa fa-edit last" aria-hidden="true" name="edit-origin-text"></i>*/}}
