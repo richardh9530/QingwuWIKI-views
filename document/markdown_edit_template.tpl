@@ -176,10 +176,18 @@
                     </div>
 
                 </div>
-                <div class="form-group"><!--/*2020-08-16新增*/-->
+                <div class="form-group"><!--/*2020-08-16新增；注：new_html_edit_template与markdown_edit_template同步更新*/-->
                     <label class="col-sm-2 control-label">原始链接 <span class="error-message">&nbsp;</span></label>
                     <div class="col-sm-10">
                     <input type="text" name="doc_origin_url" id="documentOriginUrl" placeholder="文档原始链接" class="form-control" maxlength="50">
+                    <p style="color: #999;font-size: 12px;">如无，则空</p>
+                    </div>
+                </div>
+
+                <div class="form-group"><!--/*2020-08-16新增*/-->
+                    <label class="col-sm-2 control-label">来源 <span class="error-message">&nbsp;</span></label>
+                    <div class="col-sm-10">
+                    <input type="text" name="doc_source" id="documentSource" placeholder="文档来源" class="form-control" maxlength="50">
                     <p style="color: #999;font-size: 12px;">如无，则空</p>
                     </div>
                 </div>
