@@ -185,18 +185,18 @@
                 </div>
 
                 <div class="form-group"><!--/*2020-08-16新增*/-->
-                    <label class="col-sm-2 control-label">来源 <span class="error-message">&nbsp;</span></label>
+                    <label class="col-sm-2 control-label">发布日期 <span class="error-message">&nbsp;</span></label>
                     <div class="col-sm-10">
-                    <input type="text" name="doc_source" id="documentSource" placeholder="文档来源" class="form-control" maxlength="50">
+                    <input type="text" name="doc_release_date" id="documentReleaseDate" placeholder="文档发布日期" class="form-control" maxlength="50">
                     <p style="color: #999;font-size: 12px;">如无，则空</p>
                     </div>
                 </div>
 
                 <div class="form-group"><!--/*2020-08-16新增*/-->
-                    <label class="col-sm-2 control-label">发布日期 <span class="error-message">&nbsp;</span></label>
+                    <label class="col-sm-2 control-label">来源 <span class="error-message">&nbsp;</span></label>
                     <div class="col-sm-10">
-                        <input type="text" name="doc_release_date" id="documentReleaseDate" placeholder="文档发布日期" class="form-control" maxlength="50">
-                        <p style="color: #999;font-size: 12px;">如无，则空</p>
+                    <input type="text" name="doc_source" id="documentSource" placeholder="文档来源" class="form-control" maxlength="50">
+                    <p style="color: #999;font-size: 12px;">如无，则空</p>
                     </div>
                 </div>
 
