@@ -205,7 +205,14 @@
             <a href="javascript:;" data-toggle="tooltip" data-title="完成" class="ql-finish"><i class="fa fa-check-square" name="preview" unselectable="on">&nbsp;完成</i></a>  <!--eye-->
         </div>
 
-
+        <div class="editormd-group-special">
+            <a href="javascript:;" id="save-origin-html" data-toggle="tooltip" data-title="保存原文" class="ql-save-origin-html">
+                <i class="fa fa-folder" aria-hidden="true" name="save-origin-html">&nbsp;保存原文</i>
+            </a>
+            {{/*<a href="javascript:;" id="edit-origin-text" data-toggle="tooltip" data-title="编辑原文" >*/}}
+            {{/*	<i class="fa fa-edit last" aria-hidden="true" name="edit-origin-text"></i>*/}}
+            {{/*</a>*/}}
+        </div>
 
         <div class="editor-group">
             <a href="javascript:;" id="markdown-save" data-toggle="tooltip" data-title="保存" class="disabled save"><i class="fa fa-save first" aria-hidden="true" name="save"></i></a>

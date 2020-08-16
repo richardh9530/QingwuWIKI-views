@@ -70,6 +70,14 @@
             <a href="javascript:;" data-toggle="tooltip" data-title="完成"><i class="fa fa-check-square" name="preview" aria-hidden="true">&nbsp;完成</i></a>  <!--eye-->
         </div>
 
+        <div class="editormd-group">
+            <a href="javascript:;" id="view-origin-text" data-toggle="tooltip" data-title="查看原文" >
+            	<i class="fa fa-eye" aria-hidden="true" name="view-origin-text"></i>
+            </a>
+            {{/*<a href="javascript:;" id="edit-origin-text" data-toggle="tooltip" data-title="编辑原文" >*/}}
+            {{/*	<i class="fa fa-edit last" aria-hidden="true" name="edit-origin-text"></i>*/}}
+            {{/*</a>*/}}
+        </div>
 
         <div class="editormd-group">
             <a href="javascript:;" id="markdown-save" data-toggle="tooltip" data-title="保存" class="disabled save"><i class="fa fa-save first" aria-hidden="true" name="save"></i></a>
@@ -223,6 +231,35 @@
             </div>
         </div>
         </form>
+    </div>
+</div>
+<!--- 编辑原文 暂未用到 --->
+<div class = "modal fade" id = "saveOriginTextModal" tabindex = "-1" role = "dialog" aria-labelledby ="saveOriginTextModalLabel">
+    <div class = "modal-dialog">
+        <div class = "modal-content">
+            <form method= "post" action = "{{urlfor "TemplateController.Add"}}" id = "saveTemplateForm" class ="form-horizontal">
+                <input type = "hidden" name = "identify" value = "{{.Model.Identify}}">
+                <input type = "hidden" name= "content">
+                <div class = "modal-header">
+                    <button type = "button" class = "close" data-dismiss= "modal" aria-label = "Close"><span aria-hidden = "true">&times; </span></button>
+                    <h4 class= "modal-title">编辑原文</h4>
+                </div>
+                <div class = "modal-body text-center">
+                <div class = "form-group">
+                    {{/*<label class = "col-sm-2 control-label">原文内容 <span class = "error-message">*</span></label>*/}}
+                    <div class ="col-sm-12">
+                        {{/*<input type = "text" name = "template_name" id = "templateName" placeholder = "原文内容" class = "form-control"  maxlength= "50">*/}}
+                        <textarea rows="20" class="form-control" name="origin_text_editor" placeholder="原文内容"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class = "modal-footer">
+                <span class = "error-message show-error-message"></span>
+                <button type = "button" class = "btn btn-default" data-dismiss ="modal">取消</button>
+                <button type= "submit" class = "btn btn-primary" id = "btnSaveTemplate" data-loading-text = "保存中...">立即保存</button>
+            </div>
+            </form>
+    </div>
     </div>
 </div>
 
