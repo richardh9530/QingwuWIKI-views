@@ -214,6 +214,12 @@
             {{/*</a>*/}}
         </div>
 
+        <div class="editormd-group"><!--查看原文-->
+            <a href="javascript:;" id="view-origin-html" data-toggle="tooltip" data-title="查看原文" class="ql-view-origin-html">
+                <i class="fa fa-eye" aria-hidden="true" name="view-origin-html"></i>
+            </a>
+        </div>
+
         <div class="editor-group">
             <a href="javascript:;" id="markdown-save" data-toggle="tooltip" data-title="保存" class="disabled save"><i class="fa fa-save first" aria-hidden="true" name="save"></i></a>
             <a href="javascript:;" data-toggle="tooltip" data-title="发布" id="btnRelease"><i class="fa fa-cloud-upload last" name="release" aria-hidden="true"></i></a>
