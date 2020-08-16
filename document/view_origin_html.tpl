@@ -113,7 +113,7 @@
             </div>
         </div>
     </header>
-    <article class="container-fluid manual-body">
+    <article> <!--class="container-fluid manual-body"-->
             <div class="manual-article">
                 <div class="article-head">
                     <div class="container-fluid">
