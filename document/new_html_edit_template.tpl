@@ -22,7 +22,10 @@
         window.highlightStyle = "{{.HighlightStyle}}";
     </script>
     <!-- Bootstrap -->
+
     <link href="{{cdncss "/static/bootstrap/css/bootstrap.min.css"}}" rel="stylesheet">
+    <link href="{{cdncss "/static/bootstrap/plugins/tagsinput/bootstrap-tagsinput.css"}}" rel="stylesheet"><!--标签-->
+    <link href="{{cdncss "/static/bootstrap/plugins/bootstrap-switch/css/bootstrap3//bootstrap-switch.min.css"}}" rel="stylesheet"><!--开关-->
     <link href="{{cdncss "/static/font-awesome/css/font-awesome.min.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/jstree/3.3.4/themes/default/style.min.css"}}" rel="stylesheet">
     <link href="{{cdncss "/static/css/jstree.css"}}" rel="stylesheet">
@@ -39,6 +42,7 @@
     <!--[if lt IE 9]>
     <script src="/static/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="/static/respond.js/1.4.2/respond.min.js"></script>
+
     <![endif]-->
     <style type="text/css">
         .modal{z-index: 999999999;}
@@ -184,6 +188,11 @@
             font-family: icomoon,Helvetica,Arial,sans-serif;
             font-style: normal;
         }
+
+        .bootstrap-tagsinput{
+            display: block !important;
+        }
+
     </style>
 </head>
 <body>
@@ -196,7 +205,7 @@
         </div>
 
         <div class="editormd-group-special">
-            <a href="javascript:change_to_markdown_editor();" data-toggle="tooltip" data-title="切换为Markdwon编辑器" >
+            <a href="javascript:change_to_markdown_editor();" data-toggle="tooltip" data-title="切换为Markdwon编辑器" id="editor_changer">
             	<i class="fa fa-exchange" aria-hidden="true">&nbsp;切换为markdown编辑器</i>
             </a>
         </div>
@@ -265,7 +274,7 @@
 <!-- 添加文档 -->
 <div class="modal fade" id="addDocumentModal" tabindex="-1" role="dialog" aria-labelledby="addDocumentModalLabel">
     <div class="modal-dialog" role="document">
-        <form method="post" action="{{urlfor "DocumentController.Create" ":key" .Model.Identify}}" id="addDocumentForm" class="form-horizontal">
+        <form method="post" action="{{urlfor "DocumentController.Create" ":key" .Model.Identify}}" id="addDocumentForm" class="form-horizontal" onsubmit="return beforeCreateDocument()">
             <input type="hidden" name="identify" value="{{.Model.Identify}}">
             <input type="hidden" name="doc_id" value="0">
             <input type="hidden" name="parent_id" value="0">
@@ -311,6 +320,23 @@
                         <div class="col-sm-10">
                             <input type="text" name="doc_source" id="documentSource" placeholder="文档来源" class="form-control" maxlength="100">
                             <p style="color: #999;font-size: 12px;">如无，则空</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group"><!--/*2020-08-19新增*/-->
+                        <label class="col-sm-2 control-label">标签 <span class="error-message">&nbsp;</span></label>
+                        <div class="col-sm-10" id="labels_container">
+                            <input type="text" name="doc_labels" id="documentLabels" placeholder="文档标签" class="form-control" maxlength="100">
+                            <p style="color: #999;font-size: 12px;">最多允许添加10个标签，多个标签请用“,”分割</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="starDoc" class="col-sm-2 control-label">星标 <span class="error-message">&nbsp;</span></label>
+                        <div class="controls col-sm-10" id="doc_star_container">
+                            <div class="switch switch-small" data-on="primary" data-off="info">
+                                <input type="checkbox" id="starDoc" name="doc_is_star" data-size="small">
+                            </div>
                         </div>
                     </div>
 
@@ -423,7 +449,8 @@
 <script src="{{cdnjs "/static/js/array.js" "version"}}" type="text/javascript"></script>
 <script src="{{cdnjs "/static/js/editor.js"}}" type="text/javascript"></script>
 
-
+<script src="{{cdnjs "/static/bootstrap/plugins/tagsinput/bootstrap-tagsinput.min.js"}}" type="text/javascript"></script>
+<script src="{{cdnjs "/static/bootstrap/plugins/bootstrap-switch/js/bootstrap-switch.min.js"}}" type="text/javascript"></script>
 
 <script src="{{cdnjs "/static/tinymce/js/tinymce/tinymce.min.js"}}" type="text/javascript"></script>
 
@@ -520,6 +547,14 @@
         });
     });
 
+    $('input[name="doc_labels"]').tagsinput({
+        confirmKeys: [13,44],
+        maxTags: 10,
+        trimValue: true,
+        cancelConfirmKeysOnEmpty : false
+    });
+    $("#starDoc").bootstrapSwitch();
+
     function change_to_markdown_editor(){
         $("#bookEditForm").ajaxForm({
             success : function (res) {
@@ -528,6 +563,26 @@
             }
         });
         $("#bookEditForm").submit();
+    }
+
+    function beforeCreateDocument(){
+    	// 提交前触发
+        $node = window.selectNode
+        $node["origin_url"] = $("input[name='doc_origin_url']").val();  // 2020-08-16 增加
+        $node["release_date"] = $("input[name='doc_release_date']").val();
+        $node["source"] = $("input[name='doc_source']").val();
+        $node["labels"] =  $("input[name='doc_labels']").val();  // 2020-08-19 增加
+
+
+        if ($("input[name='doc_is_star']").is(":checked")) {
+            // 存在
+            $node["is_star"] =  1 // 是否星标
+        } else {
+            // 不存在
+            $node["is_star"] =  0
+        }
+        // $("input[name='doc_source']").val($node["source"])
+        window.modified_node = $node  // 修改后使得结果立即可见
     }
 </script>
 </body>
