@@ -573,7 +573,6 @@
         $node["source"] = $("input[name='doc_source']").val();
         $node["labels"] =  $("input[name='doc_labels']").val();  // 2020-08-19 增加
 
-
         if ($("input[name='doc_is_star']").is(":checked")) {
             // 存在
             $node["is_star"] =  1 // 是否星标
