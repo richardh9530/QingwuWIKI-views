@@ -10,8 +10,11 @@
             </a>
             <nav class="collapse navbar-collapse col-sm-10">
                 <ul class="nav navbar-nav">
-                    <li {{if eq .ControllerName "HomeController"}}class="active"{{end}}>
-                        <a href="{{urlfor "HomeController.Index" }}" title="首页">首页</a>
+                    {{/*<li {{if eq .ControllerName "HomeController"}}class="active"{{end}}>*/}}
+                    {{/*    <a href="{{urlfor "HomeController.Index" }}" title="首页">首页</a>*/}}
+                    {{/*</li>*/}}
+                    <li {{if eq .ControllerName "DocumentLabelController"}} class="active"{{end}}>
+                        <a href="{{urlfor "DocumentLabelController.List" }}" title="标签">标签</a>
                     </li>
                     <li {{if eq .ControllerName "BlogController"}}{{if eq  .ActionName "List" "Index"}}class="active"{{end}}{{end}}>
                         <a href="{{urlfor "BlogController.List" }}" title="文章">文章</a>
@@ -95,6 +98,9 @@
                     <ul class="dropdown-menu user-info-dropdown" role="menu">
                         <li>
                             <a href="{{urlfor "SettingController.Index"}}" title="个人中心"><i class="fa fa-user" aria-hidden="true"></i> 个人中心</a>
+                        </li>
+                        <li><!--文档标签-->
+                            <a href="{{urlfor "DocumentLabelController.List"}}" title="标签列表"><i class="fa fa-tag" aria-hidden="true"></i> 标签列表</a>
                         </li>
                         <li>
                             <a href="{{urlfor "BookController.Index"}}" title="我的项目"><i class="fa fa-book" aria-hidden="true"></i> 我的项目</a>

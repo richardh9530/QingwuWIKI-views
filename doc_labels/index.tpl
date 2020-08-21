@@ -24,27 +24,25 @@
         <div class="row">
             <div class="manual-list">
                 {{range $index,$item := .Lists}}
-                <div class="list-item">
-                    <dl class="manual-item-standard">
-                        <dt>
-                            <a href="{{urlfor "DocumentController.Index" ":key" $item.Identify}}" title="{{$item.BookName}}-{{$item.CreateName}}" target="_blank">
-                                <img src="{{cdnimg $item.Cover}}" class="cover" alt="{{$item.BookName}}-{{$item.CreateName}}">
-                            </a>
-                        </dt>
-                        <dd>
-                            <a href="{{urlfor "DocumentController.Index" ":key" $item.Identify}}" class="name" title="{{$item.BookName}}-{{$item.CreateName}}" target="_blank">{{$item.BookName}}</a>
-                        </dd>
-                        <dd>
-                            <span class="author">
-                                <b class="text">作者</b>
-                                <b class="text">-</b>
-                                <b class="text">{{if eq $item.RealName "" }}{{$item.CreateName}}{{else}}{{$item.RealName}}{{end}}</b>
-                            </span>
-                        </dd>
-                    </dl>
+                <div class="search-item">
+                    <div class="title">
+                        <a href="{{urlfor "DocumentController.ReadByBookId" ":book_id" $item.BookId ":id" $item.Identify}}" title="{{$item.DocumentName}}" target="_blank">{{str2html $item.DocumentName}}</a>
+                    </div>
+                    {{/*<div class="description">*/}}
+                    {{/*{{str2html $item.Description}}*/}}
+                    {{/*</div>*/}}
+                    {{/*<div class="source">*/}}
+                    {{/*{{if eq $item.SearchType "document"}}*/}}
+                    {{/*<span class="item">来自项目：<a href="{{urlfor "DocumentController.Index" ":key" $item.BookIdentify}}" target="_blank">{{$item.BookName}}</a></span>*/}}
+                    {{/*{{else}}*/}}
+                    {{/*<span class="item">来自文章：<a href="{{urlfor "BlogController.Index" ":id" $item.DocumentId}}" target="_blank">{{$item.BookName}}</a></span>*/}}
+                    {{/*{{end}}*/}}
+                    {{/*<span class="item">作者：{{$item.Author}}</span>*/}}
+                    {{/*<span class="item">更新时间：{{date_format  $item.ModifyTime "2006-01-02 15:04:05"}}</span>*/}}
+                    {{/*</div>*/}}
                 </div>
                 {{else}}
-                    <div class="text-center" style="height: 200px;margin: 100px;font-size: 28px;">暂无项目</div>
+                    <div class="text-center" style="height: 200px;margin: 100px;font-size: 28px;">暂无文档</div>
                 {{end}}
 
                 <div class="clearfix"></div>

@@ -189,7 +189,7 @@
             font-style: normal;
         }
 
-        .bootstrap-tagsinput{
+        .bootstrap-tagsinput{  /*标签*/
             display: block !important;
         }
 
@@ -274,7 +274,8 @@
 <!-- 添加文档 -->
 <div class="modal fade" id="addDocumentModal" tabindex="-1" role="dialog" aria-labelledby="addDocumentModalLabel">
     <div class="modal-dialog" role="document">
-        <form method="post" action="{{urlfor "DocumentController.Create" ":key" .Model.Identify}}" id="addDocumentForm" class="form-horizontal" onsubmit="return beforeCreateDocument()">
+        <form method="post" action="{{urlfor "DocumentController.Create" ":key" .Model.Identify}}" id="addDocumentForm"
+            class="form-horizontal" onsubmit="return beforeCreateDocument()">
             <input type="hidden" name="identify" value="{{.Model.Identify}}">
             <input type="hidden" name="doc_id" value="0">
             <input type="hidden" name="parent_id" value="0">

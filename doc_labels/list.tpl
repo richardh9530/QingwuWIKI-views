@@ -25,7 +25,7 @@
             <div class="hide tag-container-outer" style="border: 0;margin-top: 0;padding: 5px 15px;min-height: 200px;">
                 <span class="tags">
                     {{range  $index,$item := .Labels}}
-                    <a href="{{urlfor "LabelController.Index" ":key" $item.LabelName}}">{{$item.LabelName}}<span class="detail">{{$item.BookNumber}}</span></a>
+                    <a href="{{urlfor "DocumentLabelController.Index" ":key" $item.LabelName}}">{{$item.LabelName}}<span class="detail">{{$item.DocNumber}}</span></a>
                     {{else}}
                     <div class="text-center">暂无标签</div>
                     {{end}}
