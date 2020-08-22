@@ -75,8 +75,9 @@
 <a href="http://heaven/heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> 清无时空</a>
 <a href="{{urlfor "DocumentLabelController.List" }}" style="margin-left: 10px;" class="btn btn-default">
 	<i class="fa fa-tag" aria-hidden="true"></i> 标签列表</a>
-<a href="{{urlfor "DocumentLabelController.List" }}" style="margin-left: 10px;" class="btn btn-default">
-    <i class="fa fa-star" aria-hidden="true"></i> 星标文档</a>
+<a href="{{urlfor "DocumentStarController.Index" ":book_id" .Model.BookId }}"
+    style="margin-left: 10px;" class="btn btn-default">
+        <i class="fa fa-star" aria-hidden="true"></i> 星标文档</a>
 
 <div class="navbar-header pull-right manual-menu">
 {{/*<a href="http://heaven/heaven/" id="printSinglePage" class="btn btn-info" style="margin-right: 10px;"><i class="fa"></i> 清无时空</a>*/}}

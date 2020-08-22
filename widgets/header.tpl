@@ -10,29 +10,28 @@
             </a>
             <nav class="collapse navbar-collapse col-sm-10">
                 <ul class="nav navbar-nav">
-                    {{/*<li {{if eq .ControllerName "HomeController"}}class="active"{{end}}>*/}}
-                    {{/*    <a href="{{urlfor "HomeController.Index" }}" title="首页">首页</a>*/}}
-                    {{/*</li>*/}}
+                    <li {{if eq .ControllerName "HomeController"}}class="active"{{end}}>
+                        <a href="{{urlfor "HomeController.Index" }}" title="首页">首页</a>
+                    </li>
                     <li {{if eq .ControllerName "DocumentLabelController"}} class="active"{{end}}>
                         <a href="{{urlfor "DocumentLabelController.List" }}" title="标签">标签</a>
                     </li>
                     <li {{if eq .ControllerName "BlogController"}}{{if eq  .ActionName "List" "Index"}}class="active"{{end}}{{end}}>
                         <a href="{{urlfor "BlogController.List" }}" title="文章">文章</a>
                     </li>
-                    <li {{if eq .ControllerName "QingwuController"}}{{if eq  .ActionName "List" "Index"}}class="active"{{end}}{{end}}>
-                        {{/*<a href="http://heaven/heaven/" title="清无时空">H</a>*/}}
-                        <a href="http://heaven/" class="navbar-brand" title="WisdomQingwu"
-                            style="font-size:1.2em;
-                            margin-left:0.1px;
-                            color:white;
-                            background-color:gray;">
-                            <b>W</b>
-                        </a>
-                    </li>
+                    {{/*<li {{if eq .ControllerName "QingwuController"}}{{if eq  .ActionName "List" "Index"}}class="active"{{end}}{{end}}>*/}}
+                    {{/*    <a href="http://heaven/" class="navbar-brand" title="WisdomQingwu"*/}}
+                    {{/*        style="font-size:1.2em;*/}}
+                    {{/*        margin-left:0.1px;*/}}
+                    {{/*        color:white;*/}}
+                    {{/*        background-color:gray;">*/}}
+                    {{/*        <b>W</b>*/}}
+                    {{/*    </a>*/}}
+                    {{/*</li>*/}}
                 </ul>
                 <div class="searchbar pull-left visible-lg-inline-block visible-md-inline-block">
                     <form class="form-inline" action="{{urlfor "SearchController.Index"}}" method="get">
-                        <input class="form-control" name="keyword" type="search" style="width: 230px;" placeholder="请输入关键词..." value="{{.Keyword}}">
+                        <input class="form-control" name="keyword" type="search" style="width: 200px;" placeholder="请输入关键词..." value="{{.Keyword}}">
                         <button class="search-btn">
                             <i class="fa fa-search"></i>
                         </button>
