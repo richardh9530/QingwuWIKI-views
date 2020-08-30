@@ -52,11 +52,11 @@
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="margin-top: -5px;">
 <li><a href="/docs/wisdom" target="_self">智慧清无</a> </li>
-<li><a href="/docs/research" target="_self">Research</a> </li>
-<li><a href="/docs/computer" target="_self">CS编程相关</a> </li>
+<li><a href="/docs/work" target="_self">公文总库</a> </li>
 <li><a href="/docs/encyclopedia" target="_self">清无百科</a> </li>
-<li><a href="/docs/basics" target="_self">学科基础知识</a> </li>
-<li><a href="/docs/books" target="_self">清无典藏书库</a> </li>
+<li><a href="/docs/computer" target="_self">CS编程相关</a> </li>
+<li><a href="/docs/research" target="_self">Research</a> </li>
+<li><a href="/docs/books" target="_self">清无典藏</a> </li>
                 </ul>
             </div>
                 <span class="slidebar" id="slidebar"><i class="fa fa-align-justify"></i></span>
@@ -75,9 +75,22 @@
 <a href="http://heaven/heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> 清无时空</a>
 <a href="{{urlfor "DocumentLabelController.List" }}" style="margin-left: 10px;" class="btn btn-default">
 	<i class="fa fa-tag" aria-hidden="true"></i> 标签列表</a>
+
 <a href="{{urlfor "DocumentStarController.Index" ":book_id" .Model.BookId }}"
     style="margin-left: 10px;" class="btn btn-default">
         <i class="fa fa-star" aria-hidden="true"></i> 星标文档</a>
+
+{{if eq .Model.BookId 8}}
+    <a href="{{urlfor "DocumentStarController.IsResume" ":book_id" .Model.BookId }}"
+    style="margin-left: 10px;" class="btn btn-default">
+    <i class="fa fa-address-book-o" aria-hidden="true"></i> 查看简历</a>
+{{end}}
+
+{{if eq .Model.BookId 5}}
+<a href="{{urlfor "DocumentStarController.IsDoc" ":book_id" .Model.BookId }}"
+style="margin-left: 10px;" class="btn btn-default">
+<i class="fa fa-file-text-o" aria-hidden="true"></i> 查看公文</a>
+{{end}}
 
 <div class="navbar-header pull-right manual-menu">
 {{/*<a href="http://heaven/heaven/" id="printSinglePage" class="btn btn-info" style="margin-right: 10px;"><i class="fa"></i> 清无时空</a>*/}}

@@ -15,11 +15,11 @@
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="margin-top: 5px;">
                 <li><a href="/doc_star/8" target="_self">智慧清无</a> </li>
-                <li><a href="/doc_star/7" target="_self">Research</a> </li>
-                <li><a href="/doc_star/3" target="_self">CS编程相关</a> </li>
+                <li><a href="/doc_star/5" target="_self">公文总库</a> </li>
                 <li><a href="/doc_star/6" target="_self">清无百科</a> </li>
-                <li><a href="/doc_star/5" target="_self">学科基础知识</a> </li>
-                <li><a href="/doc_star/9" target="_self">清无典藏书库</a> </li>
+                <li><a href="/doc_star/3" target="_self">CS编程相关</a> </li>
+                <li><a href="/doc_star/7" target="_self">Research</a> </li>
+                <li><a href="/doc_star/9" target="_self">清无典藏</a> </li>
                 </ul>
             </div>
         </div>

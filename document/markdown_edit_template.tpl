@@ -225,11 +225,29 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="starDoc" class="col-sm-2 control-label">星标 <span class="error-message">&nbsp;</span></label>
+                    <label for="starDoc" class="col-sm-2 control-label">是否星标 <span class="error-message">&nbsp;</span></label>
                     <div class="controls col-sm-10" id="doc_star_container">
                     <div class="switch switch-small" data-on="primary" data-off="info">
                         <input type="checkbox" id="starDoc" name="doc_is_star" data-size="small">
                     </div>
+                    </div>
+                </div>
+
+                <div class="form-group"><!--/*2020-08-30新增；注：new_html_edit_template与markdown_edit_template同步更新*/-->
+                    <label for="isDoc" class="col-sm-2 control-label">是否公文 <span class="error-message">&nbsp;</span></label>
+                    <div class="controls col-sm-10" id="doc_is_doc_container">
+                        <div class="switch switch-small" data-on="primary" data-off="info">
+                            <input type="checkbox" id="isDoc" name="doc_is_doc" data-size="small">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group"><!--/*2020-08-30新增；*/-->
+                    <label for="isResume" class="col-sm-2 control-label">是否简历 <span class="error-message">&nbsp;</span></label>
+                    <div class="controls col-sm-10" id="doc_is_resume_container">
+                        <div class="switch switch-small" data-on="primary" data-off="info">
+                            <input type="checkbox" id="isResume" name="doc_is_resume" data-size="small">
+                        </div>
                     </div>
                 </div>
 
@@ -616,6 +634,8 @@
         cancelConfirmKeysOnEmpty : false
     });  // 标签
     $("#starDoc").bootstrapSwitch();  // 星标
+    $("#isDoc").bootstrapSwitch();
+    $("#isResume").bootstrapSwitch();
 
     function change_to_html_editor(){
         $("#bookEditForm").ajaxForm({
@@ -643,6 +663,23 @@
             // 不存在
             $node["is_star"] =  0
         }
+
+        if ($("input[name='doc_is_doc']").is(":checked")) {
+            // 存在
+            $node["is_doc"] =  1 // 是否公文
+        } else {
+            // 不存在
+            $node["is_doc"] =  0
+        }
+
+        if ($("input[name='doc_is_resume']").is(":checked")) {
+            // 存在
+            $node["is_resume"] =  1 // 是否简历
+        } else {
+            // 不存在
+            $node["is_resume"] =  0
+        }
+
         // $("input[name='doc_source']").val($node["source"])
         window.modified_node = $node  // 修改后使得结果立即可见
     }

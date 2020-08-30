@@ -16,10 +16,23 @@
 </head>
 <body>
     <div class="manual-reader manual-container manual-search-reader">
-    {{template "doc_labels/doc_star_header.tpl" .}}
+    {{if eq .Remarks "is_doc"}}
+        {{template "doc_labels/doc_star_header_without_button.tpl" .}}
+    {{else if eq .Remarks "is_resume"}}
+        {{template "doc_labels/doc_star_header_without_button.tpl" .}}
+    {{else}}
+        {{template "doc_labels/doc_star_header.tpl" .}}
+    {{end}}
+
     <div class="container manual-body">
     <div class="search-head">
-    <strong class="search-title">{{.Model.BookName}}-星标文档</strong>
+    	{{if eq .Remarks "is_doc"}}
+            <strong class="search-title">公文列表</strong>
+        {{else if eq .Remarks "is_resume"}}
+            <strong class="search-title">简历列表</strong>
+        {{else}}
+            <strong class="search-title">{{.Model.BookName}}-星标文档</strong>
+        {{end}}
     </div>
     <div class="row">
     <div class="manual-list">
