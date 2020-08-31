@@ -216,6 +216,14 @@
                     </div>
                 </div>
 
+                <div class="form-group"><!--/*2020-08-31新增*/-->
+                    <label class="col-sm-2 control-label">编号 <span class="error-message">&nbsp;</span></label>
+                    <div class="col-sm-10">
+                        <input type="text" name="doc_number" id="documentNumber" placeholder="文档编号" class="form-control" maxlength="100">
+                        <p style="color: #999;font-size: 12px;">如无，则空</p>
+                    </div>
+                </div>
+
                 <div class="form-group"><!--/*2020-08-19新增*/-->
                     <label class="col-sm-2 control-label">标签 <span class="error-message">&nbsp;</span></label>
                     <div class="col-sm-10" id="labels_container">
