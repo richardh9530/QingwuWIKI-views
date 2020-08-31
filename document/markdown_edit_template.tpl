@@ -654,6 +654,7 @@
         $node["origin_url"] = $("input[name='doc_origin_url']").val();  // 2020-08-16 增加
         $node["release_date"] = $("input[name='doc_release_date']").val();
         $node["source"] = $("input[name='doc_source']").val();
+        $node["number"] = $("input[name='doc_number']").val();  // 一般是公文的 发文字号
         $node["labels"] =  $("input[name='doc_labels']").val();  // 2020-08-19 增加
 
         if ($("input[name='doc_is_star']").is(":checked")) {
