@@ -1,15 +1,8 @@
 <header class="navbar navbar-static-top navbar-fixed-top manual-header" role="banner">
     <div class="container">
         <div class="navbar-header col-sm-12 col-md-9 col-lg-8">
-            <a href="{{.BaseUrl}}/" class="navbar-brand" title="{{.SITE_NAME}}">
-                {{if .SITE_TITLE}}
-                {{.SITE_TITLE}}
-                {{else}}
-                {{.SITE_NAME}}
-                {{end}}
-            </a>
 
-            <div class="dropdown pull-left navbar-nav" style="margin-top: 8px;">
+            <div class="dropdown pull-left navbar-nav" style="margin-top: 8px;margin-right:10px;">
                 <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-exchange" aria-hidden="true"></i> 切换项目 <span class="caret"></span>
                 </button>
@@ -22,6 +15,20 @@
                 <li><a href="/doc_star/9" target="_self">清无典藏</a> </li>
                 </ul>
             </div>
+
+            <a href="{{ urlfor "DocumentController.Index" ":key" .Model.Identify}}" class="navbar-brand">{{.Model.BookName}}</a>
+
+            <span class="navbar-brand"><<</span>
+
+            <a href="{{.BaseUrl}}/" class="navbar-brand" title="{{.SITE_NAME}}">
+                {{if .SITE_TITLE}}
+                {{.SITE_TITLE}}
+                {{else}}
+                {{.SITE_NAME}}
+                {{end}}
+            </a>
+
+
         </div>
     </div>
 </header>

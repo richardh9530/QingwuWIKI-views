@@ -72,9 +72,12 @@
     <i class="fa fa-edit" aria-hidden="true"></i> 编辑</a>
 
 <a href="http://heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> WisdomQingwu</a>
+
 <a href="http://heaven/heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> 清无时空</a>
+
+	<!--/*20200901更新：此处标签为全局标签，故不展示*/
 <a href="{{urlfor "DocumentLabelController.List" }}" style="margin-left: 10px;" class="btn btn-default">
-	<i class="fa fa-tag" aria-hidden="true"></i> 标签列表</a>
+	<i class="fa fa-tag" aria-hidden="true"></i> 标签列表</a>-->
 
 <a href="{{urlfor "DocumentStarController.Index" ":book_id" .Model.BookId }}"
     style="margin-left: 10px;" class="btn btn-default">

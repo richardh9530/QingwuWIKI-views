@@ -31,7 +31,7 @@
         {{else if eq .Remarks "is_resume"}}
             <strong class="search-title">简历列表</strong>
         {{else}}
-            <strong class="search-title">{{.Model.BookName}}-星标文档</strong>
+            <strong class="search-title">星标文档</strong>
         {{end}}
     </div>
     <div class="row">
