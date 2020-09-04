@@ -40,16 +40,26 @@
                         <div class="search-item">
 
                             <div class="title">
-                            	...
-                                <a href="{{urlfor "DocumentController.ReadByBookId" ":book_id" $item.BookId ":id" $item.ThirdParentDocIdentify}}"
-                                    title="{{$item.ThirdParentDocName}}" target="_blank">{{str2html $item.ThirdParentDocName}}</a>
+                            	{{if ne $item.ThirdParentPId 0 }}
+                                    [...]
+                                {{end}}
+                                {{if ne $item.ThirdParentDocId 0 }}
+                                    <a href="{{urlfor "DocumentController.ReadByBookId" ":book_id" $item.BookId ":id" $item.ThirdParentDocIdentify}}"
+                                        title="{{$item.ThirdParentDocName}}" target="_blank">{{str2html $item.ThirdParentDocName}}</a>
                                 	>>
-                                <a href="{{urlfor "DocumentController.ReadByBookId" ":book_id" $item.BookId ":id" $item.SecondParentDocIdentify}}"
-                                    title="{{$item.SecondParentDocName}}" target="_blank">{{str2html $item.SecondParentDocName}}</a>
-                                	>>
-                                <a href="{{urlfor "DocumentController.ReadByBookId" ":book_id" $item.BookId ":id" $item.FirstParentDocIdentify}}"
-                                    title="{{$item.FirstParentDocName}}" target="_blank">{{str2html $item.FirstParentDocName}}</a>
+                                {{end}}
+                                {{if ne $item.SecondParentDocId 0 }}
+                                    <a href="{{urlfor "DocumentController.ReadByBookId" ":book_id" $item.BookId ":id" $item.SecondParentDocIdentify}}"
+                                        title="{{$item.SecondParentDocName}}" target="_blank">{{str2html $item.SecondParentDocName}}</a>
                                     >>
+                                {{end}}
+                                {{if ne $item.FirstParentDocId 0 }}
+                                    <a href="{{urlfor "DocumentController.ReadByBookId" ":book_id" $item.BookId ":id" $item.FirstParentDocIdentify}}"
+                                        title="{{$item.FirstParentDocName}}" target="_blank">{{str2html $item.FirstParentDocName}}</a>
+                                    >>
+                                {{end}}
+
+
                                 <a href="{{urlfor "DocumentController.ReadByBookId" ":book_id" $item.BookId ":id" $item.Identify}}"
                                     title="{{$item.DocumentName}}" target="_blank">{{str2html $item.DocumentName}}</a>
                             </div>
