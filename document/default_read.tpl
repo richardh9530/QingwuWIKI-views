@@ -156,7 +156,6 @@ style="margin-left: 10px;" class="btn btn-default">
                         <div class="catalog-list read-book-preview" id="sidebar">
                         {{.Result}}
                         </div>
-
                     </div>
                     <div class="tab-item manual-search">
                         <div class="search-container">

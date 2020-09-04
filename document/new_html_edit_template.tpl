@@ -370,12 +370,12 @@
                     <div class="form-group">
                     <div class="col-lg-6">
                         <label>
-                            <input type="radio" name="is_open" value="1"> 展开<span class="text">(在阅读时会自动展开节点)</span>
+                            <input type="radio" name="is_open" value="1" id="radio_open"> 展开<span class="text">(在阅读时会自动展开节点)</span>
                         </label>
                         </div>
                         <div class="col-lg-6">
                         <label>
-                        <input type="radio" name="is_open" value="0" checked> 关闭<span class="text">(在阅读时会关闭节点)</span>
+                        <input type="radio" name="is_open" value="0" checked > 关闭<span class="text">(在阅读时会关闭节点)</span>
                         </label>
                         </div>
 
@@ -625,6 +625,14 @@
         } else {
             // 不存在
             $node["is_resume"] =  0
+        }
+
+        if ($("#radio_open").is(":checked")) {
+            // 存在
+            $node["is_open"] =  1 // 是否展开节点
+        } else {
+            // 不存在
+            $node["is_open"] =  0
         }
 
         // $("input[name='doc_source']").val($node["source"])
