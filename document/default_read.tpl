@@ -35,6 +35,102 @@
     <link href="{{cdncss "/static/tui-editor/css/tui-editor-contents.css"}}" rel="stylesheet"></link>
     <link href="{{cdncss "/static/tui-editor/css/codemirror.css"}}" rel="stylesheet"></link>
     <link href="{{cdncss "/static/tui-editor/css/github.min.css"}}" rel="stylesheet"></link>
+    <style>
+        .searchbar{
+            padding: 8px;
+        }
+        .searchbar .search-btn {
+            display: inline-block;
+            line-height: 100%;
+            cursor: pointer;
+            margin-top: -10px;
+            margin-left: -45px;
+            border: 0;
+            background-color: transparent
+        }
+        .searchbar .search-btn>i.fa{
+            padding: 10px;
+        }
+        .manual-search-reader .manual-body{
+            margin-top: 60px;
+        }
+        .manual-search-reader .search-head{
+            margin: 10px auto;
+            padding-bottom: 15px;
+            line-height: 1.5em;
+            border-bottom: 3px solid #EEEEEE;
+        }
+        .manual-search-reader .search-head .search-title{
+            font-size: 22px;
+            font-weight: 300;
+        }
+        .manual-search-reader .search-body {
+            margin-top: 80px;
+        }
+        .manual-search-reader .search-empty{
+        	margin:150px auto;
+        	text-align:center;
+        }
+        .manual-search-reader .search-empty .empty-text {
+            font-size: 18px;
+            display: block;
+            margin: 24px;
+            text-align: center;
+            opacity: .5;
+            filter: alpha(opacity=50)
+        }
+        .manual-search-reader .search-empty .empty-image{
+            margin: 5px auto;
+            display: block;
+            text-align: center;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+        .manual-search-reader .search-item{
+            margin: 0 15px;
+            padding: 10px 20px;
+            line-height: 25px;
+            word-break: break-word;
+        }
+        .manual-search-reader .search-item:hover{
+            background-color: #F5F5F5;
+        }
+        .manual-search-reader .search-item a{
+            color: #0886E9;
+        }
+        .manual-search-reader .search-item em{
+            color: #FF802C;
+            font-style:normal;
+        }
+        .manual-search-reader .search-item .title{
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .manual-search-reader .search-item .description{
+            color: #666;
+            line-height: 25px;
+            min-height: 20px;
+            font-size: 12px;
+        }
+        .manual-search-reader .search-item .site {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 600px;
+            color: #008000;
+            font-size: 12px;
+        }
+        .manual-search-reader .search-item .source .item {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .manual-search-reader .search-item .source,.manual-search-reader .search-item .source a{
+            font-size: 12px;
+            color: #999999;
+        }
+
+    </style>
 
     <script type="text/javascript">
     	window.book={"identify":"{{.Model.Identify}}"};
@@ -46,6 +142,10 @@
     <header class="navbar navbar-static-top manual-head" role="banner">
         <div class="container-fluid">
             <div class="navbar-header pull-left manual-title">
+
+            <a href="{{urlfor "HomeController.Index"}}" class="btn btn-default"><i class="fa fa-home" aria-hidden="true"></i> 首页</a>
+            &nbsp;
+
             <div class="dropdown pull-left" style="margin-right: 10px;">
                 <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-exchange" aria-hidden="true"></i> 切换项目 <span class="caret"></span>
@@ -67,9 +167,20 @@
                 <span style="font-size: 12px;font-weight: 100;"></span>
             </div>
                 	&nbsp;
-<a href="{{urlfor "HomeController.Index"}}" class="btn btn-default"><i class="fa fa-home" aria-hidden="true"></i> 首页</a>
+
 <a href="{{urlfor "DocumentController.Edit" ":key" .Model.Identify ":id" ""}}"  style="margin-left: 10px;" class="btn btn-success">
     <i class="fa fa-edit" aria-hidden="true"></i> 编辑</a>
+
+<!--/*2021.03.10更新：新增搜索功能*/-->
+&nbsp;
+<div class="searchbar" style="display:inline">
+    <form class="form-inline" action="{{urlfor "SearchController.Index"}}" method="get" style="display:inline">
+        <input class="form-control" name="keyword" type="search" style="width: 200px;" placeholder="请输入关键词..." value="{{.Keyword}}">
+        <button class="search-btn">
+            <i class="fa fa-search"></i>
+        </button>
+    </form>
+</div>
 
 <a href="http://heaven/" class="btn btn-default" style="margin-left: 10px;"><i class="fa"></i> WisdomQingwu</a>
 
