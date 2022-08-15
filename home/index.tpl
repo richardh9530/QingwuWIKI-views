@@ -22,6 +22,28 @@
     <div class="container manual-body">
         <div class="row">
              <div class="manual-list">
+                     <div class="list-item">
+                         <dl class="manual-item-standard">
+                             <dt>
+                                 <a href="http://qingwu/wiki/docs/materials" title="材料总库-admin" target="_blank">
+                                     <img src="http://qingwu/static/qingwuwiki/qingwu/images/uploads/201803/cover_151ec5c513eceb14_small.jpg" class="cover" alt="材料总库-admin">
+                                 </a>
+                             </dt>
+                             <dd>
+                                 <a href="/qingwu/view_knowledge_graph/" class="name"
+                                     title="材料总库-admin"
+                                     >材料总库
+                                 </a>
+                             </dd>
+                             <dd>
+                             <span class="author">
+                                 <b class="text">作者</b>
+                                 <b class="text">-</b>
+                                 <b class="text">admin</b>
+                             </span>
+                             </dd>
+                         </dl>
+                     </div>
                 {{range $index,$item := .Lists}}
                     <div class="list-item">
                         <dl class="manual-item-standard">

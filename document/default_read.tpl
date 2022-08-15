@@ -151,7 +151,7 @@
                 <i class="fa fa-exchange" aria-hidden="true"></i> 切换项目 <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="margin-top: -5px;">
-<li><a href="/docs/materials" target="_self">材料总库</a> </li>
+<li><a href="http://qingwu/wiki/docs/materials" target="_blank">材料总库</a> </li>
 <li><a href="/docs/wisdom" target="_self">智慧清无</a> </li>
 <li><a href="/docs/work" target="_self">公文合集</a> </li>
 <li><a href="/docs/encyclopedia" target="_self">清无百科</a> </li>
