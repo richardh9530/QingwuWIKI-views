@@ -25,7 +25,7 @@
                      <div class="list-item"><!--自定义-->
                          <dl class="manual-item-standard">
                              <dt>
-                                 <a href="http://qingwu/wiki/docs/materials" title="材料总库-admin" target="_blank">
+                                 <a href="http://qingwu/wiki/docs/materials" title="材料总库-admin" target="_self">
                                      <img src="http://qingwu/static/qingwuwiki/qingwu/images/uploads/201803/cover_151ec5c513eceb14_small.jpg" class="cover" alt="材料总库-admin">
                                  </a>
                              </dt>
@@ -47,7 +47,7 @@
                      <div class="list-item"><!--自定义-->
                           <dl class="manual-item-standard">
                               <dt>
-                                  <a href="http://qingwu/wiki/docs/resume" title="简历总库-admin" target="_blank">
+                                  <a href="http://qingwu/wiki/docs/resume" title="简历总库-admin" target="_self">
                                       <img src="http://qingwu/static/qingwuwiki/qingwu/images/uploads/201802/cover_1511f54461fa690c_small.jpg" class="cover" alt="简历总库-admin">
                                   </a>
                               </dt>
