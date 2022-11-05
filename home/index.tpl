@@ -22,50 +22,33 @@
     <div class="container manual-body">
         <div class="row">
              <div class="manual-list">
-                     <div class="list-item"><!--自定义-->
+                     <div class="list-item"><!--自定义：材料总库-->
                          <dl class="manual-item-standard">
-                             <dt>
-                                 <a href="http://qingwu/wiki/docs/materials" title="材料总库-admin" target="_self">
+                             <dt><a href="http://qingwu/wiki/docs/materials" title="材料总库-admin" target="_self">
                                      <img src="http://qingwu/static/qingwuwiki/qingwu/images/uploads/201803/cover_151ec5c513eceb14_small.jpg" class="cover" alt="材料总库-admin">
-                                 </a>
-                             </dt>
-                             <dd>
-                                 <a href="/qingwu/view_knowledge_graph/" class="name"
-                                     title="材料总库-admin"
-                                     >材料总库
-                                 </a>
-                             </dd>
-                             <dd>
-                             <span class="author">
-                                 <b class="text">作者</b>
-                                 <b class="text">-</b>
-                                 <b class="text">admin</b>
-                             </span>
-                             </dd>
+                             </a></dt>
+                             <dd><a href="/qingwu/view_knowledge_graph/" class="name" title="材料总库-admin">材料总库</a></dd>
+                             <dd><span class="author"><b class="text">作者</b><b class="text">-</b><b class="text">admin</b></span></dd>
                          </dl>
                      </div>
-                     <div class="list-item"><!--自定义-->
+                     <div class="list-item"><!--自定义：简历总库-->
                           <dl class="manual-item-standard">
-                              <dt>
-                                  <a href="http://qingwu/wiki/docs/resume" title="简历总库-admin" target="_self">
+                              <dt><a href="http://qingwu/wiki/docs/resume" title="简历总库-admin" target="_self">
                                       <img src="http://qingwu/static/qingwuwiki/qingwu/images/uploads/201802/cover_1511f54461fa690c_small.jpg" class="cover" alt="简历总库-admin">
-                                  </a>
-                              </dt>
-                              <dd>
-                                  <a href="/qingwu/view_knowledge_graph/" class="name"
-                                      title="简历总库-admin"
-                                      >简历总库
-                                  </a>
-                              </dd>
-                              <dd>
-                              <span class="author">
-                                  <b class="text">作者</b>
-                                  <b class="text">-</b>
-                                  <b class="text">admin</b>
-                              </span>
-                              </dd>
+                              </a></dt>
+                              <dd><a href="/qingwu/view_knowledge_graph/" class="name" title="简历总库-admin">简历总库</a></dd>
+                              <dd><span class="author"><b class="text">作者</b><b class="text">-</b><b class="text">admin</b></span></dd>
                           </dl>
-                      </div>
+                     </div>
+                     <div class="list-item"><!--自定义：资料合集-->
+                           <dl class="manual-item-standard">
+                               <dt><a href="http://qingwu/wiki/docs/references" title="资料合集-admin" target="_self">
+                                       <img src="http://qingwu/static/qingwuwiki/qingwu/images/uploads/201802/cover_1511f768300017b4_small.jpg" class="cover" alt="资料合集-admin">
+                               </a></dt>
+                               <dd><a href="/qingwu/view_knowledge_graph/" class="name" title="资料合集-admin">资料合集</a></dd>
+                               <dd><span class="author"><b class="text">作者</b><b class="text">-</b><b class="text">admin</b></span></dd>
+                           </dl>
+                     </div>
                 {{range $index,$item := .Lists}}
                     <div class="list-item">
                         <dl class="manual-item-standard">
